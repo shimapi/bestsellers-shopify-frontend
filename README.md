@@ -35,3 +35,5 @@ se utiliza normalize.сss, o las hojas de estilo se escriben siguiendo estrictam
 los formularios y los marcadores de posición tienen un estilo correcto;
 se utilizan bloques reutilizables en todo el proyecto;
 todas las imágenes están optimizadas, incluidas las .svg.
+
+Utiliza las fuentes WOFF. Es el formato de fuente web más utilizado y soportado.

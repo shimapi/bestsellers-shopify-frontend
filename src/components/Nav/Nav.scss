@@ -1,0 +1,27 @@
+.nav {
+	width: 100%;
+	background-color: pink;
+
+	&__menu {
+		background-color: aquamarine;
+	}
+	&__menu-item {
+		background-color: brown;
+	}
+}
+// media queries for mobile: 320px, tablet: 768, desktop reduced: 1024px, desktop: 1440px
+@media (430px <= width <= 768px) { //430 iphone pro max
+	.nav {
+		background-color: red;
+	}
+}
+@media (768px <= width <= 1024px) {
+	.nav {
+		background-color: blue;
+	}
+}
+@media (1024px <= width <= 1440px) {
+	.nav {
+		background-color: green;
+	}
+}
