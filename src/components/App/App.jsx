@@ -1,15 +1,13 @@
 import Nav from "../Nav/Nav";
 import "./App.css";
-import switchTheme from "../../utils/switch-theme.jsx";
+import ThemeSwitch from "../../utils/ThemeSwitch.jsx";
 
 function App() {
 	return (
-		<>
+		<div className="App">
 			<Nav />
-			<button id="theme-button" onClick={switchTheme}>
-				Cambiar tema
-			</button>
-		</>
+			<ThemeSwitch />
+		</div>
 	);
 }
 
