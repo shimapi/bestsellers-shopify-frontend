@@ -1,12 +1,14 @@
 import Nav from "../Nav/Nav";
-import "./App.css";
-import ThemeSwitch from "../../utils/ThemeSwitch.jsx";
+import "./App.scss";
+import ThemeSwitch from "../ThemeSwitch/ThemeSwitch.jsx";
+import MobileMenu from "../MobileMenu/MobileMenu.jsx";
 
 function App() {
 	return (
 		<div className="App">
 			<Nav />
 			<ThemeSwitch />
+			<MobileMenu />
 		</div>
 	);
 }
