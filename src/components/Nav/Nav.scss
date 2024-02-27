@@ -1,27 +1,104 @@
+@import '../../utils/css-variables.scss';
+
 .nav {
 	width: 100%;
-	background-color: pink;
+	height: 48px;
+	background-color: $color-darker;
+	display: flex;
+	align-items: center;
+	font-family: $font-subtitle;
+	font-weight: $font-subtitle-weight;
 
 	&__menu {
-		background-color: aquamarine;
+		display: flex;
+		width: 400px;
+    justify-content: space-around;
 	}
 	&__menu-item {
-		background-color: brown;
+	}
+	&__mobile{
+		display: flex;
+	}
+	&__desktop{
+    display: flex;
+    justify-content: center;
+	}
+	&__menu-switch{
+		display: none;
+	}
+	&__name{
+		padding: 0;
+    margin: 0;
+	}
+	&__name a{
+		color: $color-text;
+		text-decoration: none;
+		cursor: pointer;
+		padding: 0 12px;
+		font-family: $font-title;
+		font-weight: $font-title-weight;
+	}
+	&__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto 0;
+    align-items: center;
+    align-content: center;
 	}
 }
 // media queries for mobile: 320px, tablet: 768, desktop reduced: 1024px, desktop: 1440px
-@media (430px <= width <= 768px) { //430 iphone pro max
+@media (320px <= width <= 768px) { //430 iphone pro max
 	.nav {
-		background-color: red;
+		background-color: $color-darker;
+		position: relative;
+
+		&__open {
+			position: absolute;
+			top: 48px;
+			text-align: right;
+			display: block;
+			width: 100%;
+		}
+		&__menu-item{
+			padding:12px;
+			background-color: black;
+		}
+		&__menu-switch{
+			position: absolute;
+			right: 0;
+			top:0;
+			margin:8px;
+			padding:4px;
+			z-index: 1;
+			display: block;
+			filter: invert(100%);
+		}
+		&__desktop{
+			display: none;
+		}
+		&__closed {
+			display: none;
+		}
 	}
+	
 }
 @media (768px <= width <= 1024px) {
-	.nav {
-		background-color: blue;
+	.nav__container{
+		max-width: 768px;
+		width: 768px;
 	}
 }
 @media (1024px <= width <= 1440px) {
-	.nav {
-		background-color: green;
+	.nav__container{
+		max-width: 1024px;
+		width: 1024px;
+	}
+}
+@media (1440px <= width) {
+	.nav__container{
+    max-width: 1440px;
+    width: 1440px;
 	}
 }

@@ -1,9 +1,5 @@
-$color-darker: #071220;
-$color-accent1: #B32570;
-$color-accent2: #FECD1A;
-$color-background: #12253D;
-$color-text: #fff;
 
+@import './utils/css-variables.scss';
 
 :root {
 	font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
@@ -19,8 +15,9 @@ $color-text: #fff;
 }
 
 body {
+	padding:0;
 	margin: 0;
-	place-items: center;
+	box-sizing: border-box;
 	min-width: 320px;
 	min-height: 100vh;
 	color-scheme: light dark;
@@ -38,7 +35,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
 	body {
-		/* Estilos para el esquema de color oscuro */
+		/* Estilos para el esquema de color oscuro del cliente */
 		background-color: $color-background;
 		color: $color-text;
 	}
@@ -46,8 +43,25 @@ body {
 
 @media (prefers-color-scheme: light) {
 	body {
-		/* Estilos para el esquema de color oscuro */
+		/* Estilos para el esquema de color oscuro del cliente */
 		background-color: $color-text;
 		color: $color-background;
 	}
+}
+
+
+@media (768px <= width <= 1024px) {
+	body {
+		background-color: blue;
+	}
+}
+@media (1024px <= width <= 1440px) {
+	body {
+		background-color: green;
+	}
+}
+@media (1440px <= width) {
+	body {
+		background-color: yellow;
+	}	
 }

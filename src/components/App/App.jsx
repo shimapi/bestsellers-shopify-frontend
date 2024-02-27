@@ -1,12 +1,11 @@
 import Nav from "../Nav/Nav";
 import "./App.scss";
-import ThemeSwitch from "../ThemeSwitch/ThemeSwitch.jsx";
+// import ThemeSwitch from "../ThemeSwitch/ThemeSwitch.jsx";
 
 function App() {
 	return (
 		<div className="App">
 			<Nav />
-			<ThemeSwitch />
 		</div>
 	);
 }

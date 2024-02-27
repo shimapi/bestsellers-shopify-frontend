@@ -1,44 +1,55 @@
 import { useEffect, useState } from "react";
 import "./Nav.scss";
-import MobileMenu from "../MobileMenu/MobileMenu";
+import closeImg from "../../images/close.svg";
+import mobileMenuImg from "../../images/mobile-menu.svg";
 
 function Nav() {
-	// const [isClosed, setIsClosed] = useState(true);
 	const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
-	const [showMenu, setShowMenu] = useState("nop");
+	const [showMenu, setShowMenu] = useState("closed");
+	const [menuType, setMenuType] = useState("mobile");
 
 	useEffect(() => {
 		const handleResize = () => {
 			setIsDesktop(window.innerWidth > 768);
-			/* 			if (!isDesktop) {
-				setIsClosed(false);
-			} */
+			setShowMenu("closed");
 		};
 		window.addEventListener("resize", handleResize);
-		console.log(isDesktop, "isDesktop");
-		console.log(window.innerWidth > 768, "window.innerWidth > 768");
 
 		return () => {
 			window.removeEventListener("resize", handleResize);
 		};
-	}, [isDesktop]);
+	}, []);
 
 	useEffect(() => {
 		setShowMenu(isDesktop ? "closed" : "open");
+		setMenuType(isDesktop ? "nav__desktop" : "nav__mobile");
 	}, [isDesktop]);
 
+	function handleShowMenu() {
+		setShowMenu(showMenu === "open" ? "closed" : "open");
+	}
+
 	return (
-		<div className="nav">
-			<div className="nav__logo">
-				<a>BestSellers</a>
-				<MobileMenu isShowMenu={showMenu} />
+		<nav className={`nav ${menuType}`}>
+			<div className="nav__container">
+				<div className="nav__logo">
+					<h2 className="nav__name">
+						<a href="/">BestSellers</a>
+					</h2>
+					<img
+						onClick={handleShowMenu}
+						className="nav__menu-switch"
+						src={showMenu === "open" ? closeImg : mobileMenuImg}
+						alt="menu"
+					/>
+				</div>
+				<div className={`nav__menu nav__${showMenu}`}>
+					<div className="nav__menu-item">Más vendidos</div>
+					<div className="nav__menu-item">Acerca de</div>
+					<div className="nav__menu-item">Visitar Web</div>
+				</div>
 			</div>
-			<div className={`nav__menu ${showMenu}`}>
-				<div className="nav__menu-item">Más vendidos</div>
-				<div className="nav__menu-item">Acerca de</div>
-				<div className="nav__menu-item">Visitar Web</div>
-			</div>
-		</div>
+		</nav>
 	);
 }
 export default Nav;
