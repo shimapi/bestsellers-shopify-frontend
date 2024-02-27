@@ -18,10 +18,10 @@ function Nav() {
 		return () => {
 			window.removeEventListener("resize", handleResize);
 		};
-	}, []);
+	}, [isDesktop]);
 
 	useEffect(() => {
-		setShowMenu(isDesktop ? "closed" : "open");
+		//setShowMenu(isDesktop ? "closed" : "open");
 		setMenuType(isDesktop ? "nav__desktop" : "nav__mobile");
 	}, [isDesktop]);
 
