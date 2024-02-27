@@ -1,10 +1,11 @@
-import Header from "../Header/Header";
+import Podium from "../Podium/Podium";
+import "./Main.scss";
 
 const Main = () => {
 	return (
-		<div>
-			<Header />
-		</div>
+		<main className="main__container">
+			<Podium />
+		</main>
 	);
 };
 

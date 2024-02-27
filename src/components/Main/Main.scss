@@ -1,0 +1,33 @@
+@import '../../utils/css-variables.scss';
+
+.main__container{
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+
+}
+@media (320px <= width <= 768px) {
+  .main__container{
+    flex-direction: column;
+  }
+}
+
+@media (768px <= width <= 1024px) {
+	.main__container{
+		max-width: 768px;
+		width: 768px;
+	}
+}
+@media (1024px <= width <= 1440px) {
+	.main__container{
+		max-width: 1024px;
+		width: 1024px;
+	}
+}
+@media (1440px <= width) {
+	.main__container{
+    max-width: 1440px;
+    width: 1440px;
+	}
+}
