@@ -3,14 +3,14 @@ import "./MobileMenu.scss";
 import closeImg from "../../images/close.svg";
 import mobileMenuImg from "../../images/mobile-menu.svg";
 
-const MobileMenu = () => {
+const MobileMenu = (isShowMenu) => {
+	console.log(isShowMenu, "isShowMenu");
 	const [menu, setMenu] = useState(localStorage.getItem("menu") || "desktop");
 	const [menuSwitchButton, setMenuSwitchButton] = useState(
 		`menu-switch ${menu}`
 	);
 
 	useEffect(() => {
-		//document.body.className = "body-theme__" + menu;
 		localStorage.setItem("menu", menu);
 		setMenuSwitchButton(`menu-switch ${menu}`);
 	}, [menu]);
