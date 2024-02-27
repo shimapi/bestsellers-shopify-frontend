@@ -38,12 +38,8 @@
 }
 
 
-@media (768px <= width <= 1024px) {
-
-}
-@media (1024px <= width <= 1440px) {
-
-}
+@media (768px <= width <= 1024px) {}
+@media (1024px <= width <= 1440px) {}
 @media (1440px <= width) {}
 
 @media (768px <= width) {
@@ -81,4 +77,15 @@
       border-radius: 12px 12px 0 0;
     }
   }
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.card__place-first,
+.card__place-second,
+.card__place-third {
+  animation: fade 2s ease-in;
 }
