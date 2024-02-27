@@ -5,11 +5,7 @@ const Card = ({ winnerProduct, product }) => {
 		<>
 			<article className="card">
 				<div className="card__container">
-					<img
-						className="card__img"
-						src="https://via.placeholder.com/150"
-						alt={product.name}
-					/>
+					<img className="card__img" src={product.image} alt={product.name} />
 				</div>
 				<div className="card__place">{winnerProduct + 1}</div>
 			</article>
