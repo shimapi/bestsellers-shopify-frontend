@@ -3,8 +3,10 @@ import "./Main.scss";
 
 const Main = () => {
 	return (
-		<main className="main__container">
-			<Podium />
+		<main className="main">
+			<div className="main__container">
+				<Podium />
+			</div>
 		</main>
 	);
 };

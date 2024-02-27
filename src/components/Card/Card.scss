@@ -1,6 +1,21 @@
 @import '../../utils/css-variables.scss';
 
-
+.card{
+  &__image{
+    border-radius: 12px;
+  }
+  &__place{
+    background-color: $color-accent2;
+    font-family: $font-title;
+    font-weight: $font-title-weight;
+    font-size: x-large;
+    color: $color-background;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 @media (320px <= width <= 768px) { 
   .card{
@@ -13,32 +28,57 @@
     margin: 16px;
 
     &__place{
-      background-color: $color-accent2;
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      color: $color-background;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: absolute;
       top: -20px;
-      font-family: $font-title;
-      font-weight: $font-title-weight;
-      font-size: x-large;
-    }
-    &__image{
-      border-radius: 12px;
     }
   }
-
 }
+
+
 @media (768px <= width <= 1024px) {
 
 }
 @media (1024px <= width <= 1440px) {
 
 }
-@media (1440px <= width) {
+@media (1440px <= width) {}
 
+@media (768px <= width) {
+  .card{
+    display: flex;
+    flex-direction: column;
+    
+    &__place-first{
+      height:300px;
+      opacity: 100%;
+    }
+    &__place-second{
+      height:200px;
+      opacity:90%;
+    }
+    &__place-third{
+      height:100px;
+      opacity:80%;
+    }
+    &-first{
+      order:2;
+    }
+    &-second{
+      order:1;
+    }
+    &-third{
+      order:3;
+    }
+    &__image{
+      width: 88%;
+      height: 88%;
+      margin-bottom: 12px;
+    }
+    &__place{
+      border-radius: 12px 12px 0 0;
+    }
+  }
 }

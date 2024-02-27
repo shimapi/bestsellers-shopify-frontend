@@ -1,13 +1,30 @@
+import { useState, useEffect } from "react";
 import "./Card.scss";
 
 const Card = ({ winnerProduct, product }) => {
+	const [winnerProductPlace, setWinnerProductPlace] = useState(0);
+
+	useEffect(() => {
+		switch (winnerProduct) {
+			case 0:
+				return setWinnerProductPlace("first");
+			case 1:
+				return setWinnerProductPlace("second");
+			case 2:
+				return setWinnerProductPlace("third");
+		}
+	}, [winnerProduct]);
+
 	return (
 		<>
-			<article className="card">
+			<article className={`card card-${winnerProductPlace}`}>
 				<div className="card__container">
 					<img className="card__image" src={product.image} alt={product.name} />
 				</div>
-				<div className="card__place">{winnerProduct + 1}</div>
+
+				<div className={`card__place card__place-${winnerProductPlace}`}>
+					{winnerProduct + 1}
+				</div>
 			</article>
 		</>
 	);
