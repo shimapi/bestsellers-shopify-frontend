@@ -21,7 +21,6 @@ function Nav() {
 	}, [isDesktop]);
 
 	useEffect(() => {
-		//setShowMenu(isDesktop ? "closed" : "open");
 		setMenuType(isDesktop ? "nav__desktop" : "nav__mobile");
 	}, [isDesktop]);
 
