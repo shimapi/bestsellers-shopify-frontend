@@ -11,6 +11,7 @@ const Podium = () => {
 				console.log(product.name);
 				return <Card key={index} winnerProduct={index} product={product} />;
 			})}
+			<div className="base"></div>
 		</>
 	);
 };

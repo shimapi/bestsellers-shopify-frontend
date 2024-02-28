@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./ThemeSwitch.css";
+import "./ThemeSwitch.scss";
 import darkImg from "../../images/dark.svg";
 import lightImg from "../../images/light.svg";
 
@@ -12,7 +12,7 @@ const ThemeSwitch = () => {
 	useEffect(() => {
 		document.body.className = "body-theme__" + theme;
 		localStorage.setItem("theme", theme);
-		setThemeSwitchButton(`theme-switch ${theme}`);
+		setThemeSwitchButton(`theme-switch__image ${theme}`);
 	}, [theme]);
 
 	const toggleTheme = () => {
@@ -20,12 +20,14 @@ const ThemeSwitch = () => {
 	};
 
 	return (
-		<img
-			onClick={toggleTheme}
-			className={themeSwitchButton}
-			src={theme === "dark" ? darkImg : lightImg}
-			alt="theme"
-		/>
+		<div className="theme-switch">
+			<img
+				onClick={toggleTheme}
+				className={themeSwitchButton}
+				src={theme === "dark" ? darkImg : lightImg}
+				alt="theme"
+			/>
+		</div>
 	);
 };
 

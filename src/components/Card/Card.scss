@@ -46,6 +46,9 @@
   .card{
     display: flex;
     flex-direction: column;
+    padding: 4px;
+    bottom: 36px;
+    position: relative;
     
     &__place-first{
       height:300px;

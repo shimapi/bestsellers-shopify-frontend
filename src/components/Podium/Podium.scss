@@ -12,3 +12,13 @@
 @media (1440px <= width) {
 
 }
+@media (768px <= width) {
+  .base{
+    background-color: #b4b4b4;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    border: 10px rgb(91 85 85 / 24%) inset;
+    border-radius: 12px 12px 0 0;
+  }
+}

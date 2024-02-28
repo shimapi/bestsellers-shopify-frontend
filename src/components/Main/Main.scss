@@ -4,15 +4,17 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
-}
-.main__container{
-	position: relative;
-	text-align: center;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	margin-top: 80px;
 
+	&__container{
+		position: relative;
+		text-align: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
 }
+
 @media (320px <= width <= 768px) {
   .main__container{
     flex-direction: column;
@@ -39,7 +41,8 @@
 }
 @media (768px <= width) {
   .main__container{
-    display: flex;
+		display: flex;
     align-items: flex-end;
+    justify-content: center;
   }
 }

@@ -1,0 +1,16 @@
+@import '../../utils/css-variables.scss';
+
+.theme-switch {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	
+	&__image{
+		padding: 12px;
+		margin: 12px;
+		border-radius: 50%;
+		border: 2px solid $color-black;
+		background-color: $color-text;
+		filter: invert(100%);
+	}
+}
