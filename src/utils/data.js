@@ -10,4 +10,15 @@ export const products = [
   { name: "Goma", sales: 80, image: "https://via.placeholder.com/280" },
   { name: "Sacapuntas", sales: 90, image: "https://via.placeholder.com/280" },
   { name: "Cuaderno", sales: 4, image: "https://via.placeholder.com/280" },
+  { name: "Pegamento", sales: 100, image: "https://via.placeholder.com/280" },
+  { name: "Papel", sales: 200, image: "https://via.placeholder.com/280" },
+  { name: "Cinta", sales: 300, image: "https://via.placeholder.com/280" },
+  { name: "Cinta adhesiva", sales: 352, image: "https://via.placeholder.com/280" },
+  { name: "Pinturas", sales: 400, image: "https://via.placeholder.com/280" },
+  { name: "Pinceles", sales: 500, image: "https://via.placeholder.com/280" },
+  { name: "Cartulinas", sales: 600, image: "https://via.placeholder.com/280" },
+  { name: "Papel de colores", sales: 700, image: "https://via.placeholder.com/280" },
+  { name: "Papel de volantin", sales: 355, image: "https://via.placeholder.com/280" },
+  { name: "Papel de china", sales: 8, image: "https://via.placeholder.com/280" },
+  { name: "Papel de arroz", sales: 800, image: "https://via.placeholder.com/280" }
 ]
