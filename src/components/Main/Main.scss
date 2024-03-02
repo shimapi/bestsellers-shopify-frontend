@@ -15,7 +15,7 @@
 	}
 }
 
-@media (320px <= width <= 768px) {
+@media (width <= 768px) { 
   .main__container{
     flex-direction: column;
   }
