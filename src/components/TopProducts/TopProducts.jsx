@@ -11,7 +11,6 @@ const TopProducts = () => {
 				<Title sentence="Top 10" />
 				<div className="top-products__container">
 					{sortingProducts.slice(0, 10).map((product, index) => {
-						console.log(product);
 						return (
 							<article className="top-products__product" key={index}>
 								<img

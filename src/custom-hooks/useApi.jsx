@@ -1,28 +1,26 @@
-import { useState, useEffect } from "react";
-import fetchURL from "../utils/variables.jsx";
+const useApi = async () => {
+	try {
+		const response = await fetch(
+			"https://bestsellers-backend-pooe6815x-shimapis-projects.vercel.app/products",
+			{
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json",
+				},
 
-const useApi = () => {
-	// este es un hook que trae informacion de la API que esta en una url.
-	const [data, setData] = useState([]);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
-
-	// useEffect es un hook que se ejecuta despues de que el componente se renderiza.
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const response = await fetch(fetchURL);
-				const data = await response.json();
-				setData(data);
-				setLoading(false);
-			} catch (error) {
-				setLoading(false);
-				setError(error);
+				mode: "no-cors",
 			}
-		};
-		fetchData();
-	}, []);
-	return { data, loading, error };
+		);
+
+		if (!response.ok) {
+			throw new Error(`HTTP error! status: ${response.status}`);
+		}
+
+		const responseData = await response.json();
+		console.log(responseData);
+	} catch (error) {
+		console.error("Error fetching data: ", error);
+	}
 };
 
 export default useApi;
