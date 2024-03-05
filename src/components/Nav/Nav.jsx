@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import PathConstants from "../../routes/pathConstants";
-import { shopifyShop } from "../../utils/variables";
 import "./Nav.scss";
 import closeImg from "../../images/close.svg";
 import mobileMenuImg from "../../images/mobile-menu.svg";
@@ -53,7 +52,7 @@ function Nav() {
 						<Link to={PathConstants.ABOUT}>Acerca de</Link>
 					</div>
 					<div className="nav__menu-item">
-						<Link to={shopifyShop}>Visitar Web</Link>
+						<Link to={PathConstants.PODIUM}>Ver top 3</Link>
 					</div>
 				</div>
 			</div>

@@ -1,11 +1,19 @@
 @import '../../utils/css-variables.scss';
 
-.not-found{
+.about{
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 80px;
+  padding: 0 80px;
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 80%;
+    overflow: hidden;
+  }
 
   &__title{
     font-family: $font-title;
@@ -14,15 +22,14 @@
     margin: 0;
     padding: 0;
   }
-  &__description{
-    font-family: $font-subtitle;
-    font-weight: $font-subtitle-weight;
-    font-size: $font-subtitle-size;
-    margin: 0;
-    padding: 0;
+  &__images{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
   &__image{
-    height: 300px;
+    max-height: 200px;
     width: auto;
     margin: 24px;
   }

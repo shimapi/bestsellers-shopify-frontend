@@ -6,6 +6,7 @@ import TopProducts from "../TopProducts/TopProducts.jsx";
 import Layout from "../Layout/Layout.jsx";
 import About from "../About/About.jsx";
 import Page404 from "../Page404/Page404.jsx";
+import Product from "../Product/Product.jsx";
 
 function App() {
 	const BrowserRouter = createBrowserRouter([
@@ -27,7 +28,18 @@ function App() {
 					path: PathConstants.ABOUT,
 					element: <About />,
 				},
-
+				{
+					path: PathConstants.PRODUCT, // /product/:id
+					element: <Product />,
+				},
+				{
+					path: PathConstants.PRODUCTS, // /product
+					element: <TopProducts />,
+				},
+				{
+					path: PathConstants.PODIUM,
+					element: <Main />,
+				},
 				{
 					path: "*",
 					element: <Page404 />,

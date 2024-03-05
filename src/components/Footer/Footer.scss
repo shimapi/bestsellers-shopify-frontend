@@ -31,5 +31,13 @@
     flex-direction: row;
     flex-wrap: nowrap;
   }
+  &__social-icon{
+    width: 24px;
+    height: 24px;
+  }
+  &__social-icon:hover{
+    transform: scale(1.2);
+    filter:contrast(1.5);
+  }
 
 }
