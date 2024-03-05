@@ -1,14 +1,11 @@
 const useApi = async () => {
 	try {
 		const response = await fetch(
-			"https://bestsellers-backend-pooe6815x-shimapis-projects.vercel.app/products",
+			"https://bestsellers-backend.vercel.app/products/9057199063333",
 			{
-				method: "GET",
 				headers: {
-					"Content-Type": "application/json",
+					"X-Shopify-Access-Token": import.meta.env.VITE_ACCESS_TOKEN,
 				},
-
-				mode: "no-cors",
 			}
 		);
 
@@ -16,8 +13,8 @@ const useApi = async () => {
 			throw new Error(`HTTP error! status: ${response.status}`);
 		}
 
-		const responseData = await response.json();
-		console.log(responseData);
+		const data = await response.json();
+		console.log(data);
 	} catch (error) {
 		console.error("Error fetching data: ", error);
 	}
