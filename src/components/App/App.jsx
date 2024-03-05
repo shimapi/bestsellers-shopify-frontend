@@ -1,26 +1,32 @@
-import Main from "../Main/Main";
-import Nav from "../Nav/Nav";
-import Header from "../Header/Header";
-import ThemeSwitch from "../ThemeSwitch/ThemeSwitch.jsx";
-import Footer from "../Footer/Footer.jsx";
-import TopProducts from "../TopProducts/TopProducts";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.scss";
-import Fetch from "../Fetch/Fetch.jsx";
+import Main from "../Main/Main.jsx";
+import TopProducts from "../TopProducts/TopProducts.jsx";
+import Layout from "../Layout/Layout.jsx";
+import About from "../About/About.jsx";
 
 function App() {
-	return (
-		<div className="app">
-			<div className="app__container">
-				<Nav />
-				<Fetch />
-				<Header />
-				<Main />
-				<TopProducts />
-				<Footer />
-			</div>
-			<ThemeSwitch />
-		</div>
-	);
+	const BrowserRouter = createBrowserRouter([
+		{
+			element: <Layout />,
+
+			children: [
+				{
+					path: "/",
+					element: <Main />,
+				},
+				{
+					path: "/top-products",
+					element: <TopProducts />,
+				},
+				{
+					path: "/acerca-de",
+					element: <About />,
+				},
+			],
+		},
+	]);
+	return <RouterProvider router={BrowserRouter} />;
 }
 
 export default App;
