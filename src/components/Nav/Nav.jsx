@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import PathConstants from "../../routes/pathConstants";
+import { shopifyShop } from "../../utils/variables";
 import "./Nav.scss";
 import closeImg from "../../images/close.svg";
 import mobileMenuImg from "../../images/mobile-menu.svg";
@@ -33,7 +36,7 @@ function Nav() {
 			<div className="nav__container">
 				<div className="nav__logo">
 					<h2 className="nav__name">
-						<a href="/">BestSellers</a>
+						<Link to={PathConstants.HOME}>BestSellers</Link>
 					</h2>
 					<img
 						onClick={handleShowMenu}
@@ -43,9 +46,15 @@ function Nav() {
 					/>
 				</div>
 				<div className={`nav__menu nav__${showMenu}`}>
-					<div className="nav__menu-item">Más vendidos</div>
-					<div className="nav__menu-item">Acerca de</div>
-					<div className="nav__menu-item">Visitar Web</div>
+					<div className="nav__menu-item">
+						<Link to={PathConstants.TOP_PRODUCTS}>Más vendidos</Link>
+					</div>
+					<div className="nav__menu-item">
+						<Link to={PathConstants.ABOUT}>Acerca de</Link>
+					</div>
+					<div className="nav__menu-item">
+						<Link to={shopifyShop}>Visitar Web</Link>
+					</div>
 				</div>
 			</div>
 		</nav>
