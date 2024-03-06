@@ -19,7 +19,11 @@ const Card = ({ winnerProduct, product }) => {
 		<>
 			<article className={`card card-${winnerProductPlace}`}>
 				<div className="card__container">
-					<img className="card__image" src={product.image} alt={product.name} />
+					<img
+						className="card__image"
+						src={product.image.src}
+						alt={product.title}
+					/>
 				</div>
 
 				<div className={`card__place card__place-${winnerProductPlace}`}>

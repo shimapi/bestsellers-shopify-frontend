@@ -6,13 +6,9 @@ import { useEffect, useState } from "react";
 
 const TopProducts = () => {
 	const [product, setProduct] = useState([]);
+	const api = useApi({ url: PathConstants.FETCH_URL + "best", method: "GET" });
 
 	useEffect(() => {
-		const api = useApi({
-			url: PathConstants.FETCH_URL + "best",
-			method: "GET",
-		});
-		console.log(api);
 		const fetchProducts = async () => {
 			const products = await api;
 			setProduct(products);

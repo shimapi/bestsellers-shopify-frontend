@@ -8,6 +8,7 @@ import About from "../About/About.jsx";
 import Page404 from "../Page404/Page404.jsx";
 import Product from "../Product/Product.jsx";
 import Fetch from "../Fetch/Fetch";
+import Home from "../Home/Home";
 
 function App() {
 	const BrowserRouter = createBrowserRouter([
@@ -19,7 +20,7 @@ function App() {
 			children: [
 				{
 					path: PathConstants.HOME,
-					element: <Main />,
+					element: <Home />,
 				},
 				{
 					path: PathConstants.TOP_PRODUCTS,
