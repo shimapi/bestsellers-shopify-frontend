@@ -1,13 +1,27 @@
 import Title from "../Title/Title";
 import "./TopProducts.scss";
-import { products } from "@/utils/data.js";
-
-const bestSellers = products.filter((product) => product.sales > 100);
-console.log(bestSellers);
-
-const sortingProducts = products.sort((a, b) => b.sales - a.sales);
+import PathConstants from "@/routes/pathConstants";
+import useApi from "@/custom-hooks/useApi.jsx";
+import { useEffect, useState } from "react";
 
 const TopProducts = () => {
+	const [product, setProduct] = useState([]);
+
+	useEffect(() => {
+		const api = useApi({
+			url: PathConstants.FETCH_URL + "best",
+			method: "GET",
+		});
+		console.log(api);
+		const fetchProducts = async () => {
+			const products = await api;
+			setProduct(products);
+			console.log("PRODUCTS API", products);
+		};
+		fetchProducts();
+	}, []);
+
+	const sortingProducts = product.sort((a, b) => b.sales - a.sales);
 	return (
 		<>
 			<section className="top-products">
@@ -18,10 +32,10 @@ const TopProducts = () => {
 							<article className="top-products__product" key={index}>
 								<img
 									className="top-products__product-image"
-									src={product.image}
-									alt={product.name}
+									src={product.image.src}
+									alt={product.title}
 								/>
-								<h4 className="top-products__product-name">{product.name}</h4>
+								<h4 className="top-products__product-name">{product.title}</h4>
 							</article>
 						);
 					})}
