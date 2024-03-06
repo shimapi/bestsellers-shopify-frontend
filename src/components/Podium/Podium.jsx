@@ -13,7 +13,6 @@ const Podium = () => {
 		const fetchProducts = async () => {
 			const products = await api;
 			setProduct(products);
-			console.log("PRODUCTS API", products);
 		};
 		fetchProducts();
 	}, []);
