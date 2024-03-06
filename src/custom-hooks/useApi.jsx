@@ -1,13 +1,15 @@
-const useApi = async () => {
+const useApi = async ({ url, method }) => {
+	const urlProp = url;
+	const methodProp = method;
 	try {
-		const response = await fetch(
-			"https://bestsellers-backend.vercel.app/products/9057199063333",
-			{
-				headers: {
-					"X-Shopify-Access-Token": import.meta.env.VITE_ACCESS_TOKEN,
-				},
-			}
-		);
+		const response = await fetch(urlProp, {
+			method: methodProp,
+			headers: {
+				"Content-Type": "application/json",
+				"X-Shopify-Access-Token": import.meta.env.VITE_ACCESS_TOKEN,
+				"Access-Control-Allow-Origin": "*",
+			},
+		});
 
 		if (!response.ok) {
 			throw new Error(`HTTP error! status: ${response.status}`);

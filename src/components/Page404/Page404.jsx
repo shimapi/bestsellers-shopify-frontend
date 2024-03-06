@@ -1,6 +1,6 @@
 import "./Page404.scss";
 import { Link } from "react-router-dom";
-import PathConstants from "../../routes/pathConstants";
+import PathConstants from "@/routes/pathConstants";
 
 const Page404 = () => {
 	return (

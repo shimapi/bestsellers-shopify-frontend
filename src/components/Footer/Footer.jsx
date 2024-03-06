@@ -15,21 +15,33 @@ const Footer = () => {
 			<footer className="footer">
 				<div className="footer__container">
 					<div className="footer__social">
-						<Link to={PathConstants.INSTAGRAM}>
+						<Link
+							to={PathConstants.INSTAGRAM}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<img
 								src={instagramImg}
 								alt="Logo de Instagram"
 								className="footer__social-icon"
 							/>
 						</Link>
-						<Link to={PathConstants.FACEBOOK}>
+						<Link
+							to={PathConstants.FACEBOOK}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<img
 								src={facebookImg}
 								alt="Logo de Facebook"
 								className="footer__social-icon"
 							/>
 						</Link>
-						<Link to={PathConstants.TIKTOK}>
+						<Link
+							to={PathConstants.TIKTOK}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<img
 								src={tiktokImg}
 								alt="Logo de TikTok"
@@ -55,11 +67,11 @@ const Footer = () => {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							@altorrelieve (gracias ❤️)
+							@altorrelieve (gracias &#x2764;&#xfe0e;)
 						</Link>
 					</p>
 					<p className="footer__text">
-						Diseñado con ❤️ por &nbsp;
+						Diseñado con &#x2764;&#xfe0e; por &nbsp;
 						<Link to={PathConstants.SHIMI}>@shirleymallea</Link>
 					</p>
 				</div>

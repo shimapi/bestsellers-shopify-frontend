@@ -1,6 +1,9 @@
 import Title from "../Title/Title";
 import "./TopProducts.scss";
-import { products } from "../../utils/data.js";
+import { products } from "@/utils/data.js";
+
+const bestSellers = products.filter((product) => product.sales > 100);
+console.log(bestSellers);
 
 const sortingProducts = products.sort((a, b) => b.sales - a.sales);
 

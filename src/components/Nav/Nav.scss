@@ -48,9 +48,26 @@
     align-items: center;
     align-content: center;
 	}
+	a{
+    text-decoration: none;
+    color: $color-text;
+  }
+  a:hover{
+    color: $color-accent1;
+  }
+	&__menu-item, a{
+		height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	}
+	&__menu-item:hover, selected{
+		border-bottom: 5px solid $color-accent1;
+		color: $color-accent1;
+	}
 }
 
-@media (width <= 768px) { 
+@media (width <= 768px) {  // this is for mobile/tablet
 	.nav {
 		background-color: $color-darker;
 		transition: all 0.5s ease-in-out;

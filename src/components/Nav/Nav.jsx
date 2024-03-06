@@ -46,6 +46,9 @@ function Nav() {
 				</div>
 				<div className={`nav__menu nav__${showMenu}`}>
 					<div className="nav__menu-item">
+						<Link to={PathConstants.FETCH}>Fetch</Link>
+					</div>
+					<div className="nav__menu-item">
 						<Link to={PathConstants.TOP_PRODUCTS}>Más vendidos</Link>
 					</div>
 					<div className="nav__menu-item">

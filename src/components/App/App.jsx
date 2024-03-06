@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PathConstants from "../../routes/pathConstants.js";
+import PathConstants from "@/routes/pathConstants.js";
 import "./App.scss";
 import Main from "../Main/Main.jsx";
 import TopProducts from "../TopProducts/TopProducts.jsx";
@@ -7,6 +7,7 @@ import Layout from "../Layout/Layout.jsx";
 import About from "../About/About.jsx";
 import Page404 from "../Page404/Page404.jsx";
 import Product from "../Product/Product.jsx";
+import Fetch from "../Fetch/Fetch";
 
 function App() {
 	const BrowserRouter = createBrowserRouter([
@@ -39,6 +40,10 @@ function App() {
 				{
 					path: PathConstants.PODIUM,
 					element: <Main />,
+				},
+				{
+					path: PathConstants.FETCH,
+					element: <Fetch />,
 				},
 				{
 					path: "*",
