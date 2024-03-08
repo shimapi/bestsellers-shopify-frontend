@@ -1,0 +1,31 @@
+@import '../../utils/css-variables.scss';
+
+.top-products-skeleton{
+  &__container{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &__product{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0;
+    gap:24px
+  }
+
+  &__product-image{
+    width: 88px;
+    height: 88px;
+    border-radius: 8px;
+  }
+
+  &__product-name{
+    padding-right: 24px;
+    text-transform: uppercase;
+    font-weight: $font-title-weight;
+    letter-spacing: 2px;
+  }
+}

@@ -1,0 +1,130 @@
+@import '../../utils/css-variables.scss';
+
+.card{
+  &__image{
+    border-radius: 12px;
+  }
+  &__place{
+    background-color: $color-accent2;
+    font-family: $font-title;
+    font-weight: $font-title-weight;
+    font-size: x-large;
+    color: $color-background;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (width <= 768px) { 
+  .card{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    margin: 16px;
+
+    &__place{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      position: absolute;
+      top: -20px;
+    }
+  }
+}
+
+@media (768px <= width <= 1024px) {}
+@media (1024px <= width <= 1440px) {}
+@media (1440px <= width) {}
+
+@media (768px <= width) {
+  .card{
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    bottom: 36px;
+    position: relative;
+    
+    &__place-first{
+      height:150px;
+      opacity: 100%;
+      background-color: red;
+    }
+    &__place-second{
+      height:100px;
+      opacity:90%;
+    }
+    &__place-third{
+      height:50px;
+      opacity:80%;
+    }
+    &-first{
+      order:2;
+    }
+    &-second{
+      order:1;
+    }
+    &-third{
+      order:3;
+    }
+    &__image{
+      width: 88%;
+      height: 88%;
+      margin-bottom: 12px;
+    }
+    &__place{
+      border-radius: 12px 12px 0 0;
+    }
+
+
+    &__flip{
+      background-color: transparent;
+/*       width: 88%;
+      height: 88%; */
+      border: 1px solid #f1f1f1;
+      perspective: 1000px;
+    }
+    &__flip-inner{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+/*     &__flip &__flip-inner {
+      transform: rotateY(180deg);
+    } */
+    &__flip-front, &__flip-back{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+    }
+    &__flip-front{
+      background-color: #bbb;
+      color: black;
+    }
+    &__flip-back{
+      background-color: dodgerblue;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+  }
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.card__place-first,
+.card__place-second,
+.card__place-third {
+  animation: fade 2s ease-in;
+}

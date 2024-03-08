@@ -18,12 +18,21 @@ const Card = ({ winnerProduct, product }) => {
 	return (
 		<>
 			<article className={`card card-${winnerProductPlace}`}>
-				<div className="card__container">
-					<img
-						className="card__image"
-						src={product.image.src}
-						alt={product.title}
-					/>
+				<div className="card__flip">
+					<div className="card__flip-inner">
+						<div className="card__flip-front">
+							<img
+								className="card__image"
+								src={product.image.src}
+								alt={product.title}
+							/>
+						</div>
+					</div>
+
+					<div className="card__flip-back">
+						<h3>{product.title}</h3>
+						<p>{product.title}</p>
+					</div>
 				</div>
 
 				<div className={`card__place card__place-${winnerProductPlace}`}>
@@ -33,5 +42,4 @@ const Card = ({ winnerProduct, product }) => {
 		</>
 	);
 };
-
 export default Card;
