@@ -7,22 +7,35 @@ import "react-loading-skeleton/dist/skeleton.css";
 import TopProductsSkeleton from "./TopProductsSkeleton";
 import Skeleton from "react-loading-skeleton";
 import { Link } from "react-router-dom";
+//import Product from "../Product/Product";
 
 const TopProducts = () => {
 	const [product, setProduct] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [error, setError] = useState(null);
+
 	const api = useApi({ url: PathConstants.BEST, method: "GET" });
 
 	useEffect(() => {
-		const fetchProducts = async () => {
-			const products = await api;
-			setProduct(products);
-			setIsLoading(false);
-		};
-		fetchProducts();
-	}, []);
+		if (isLoading) {
+			const fetchProducts = async () => {
+				try {
+					const response = await api;
+					console.log("fetching products api 1", response);
+					setProduct(response);
+					setIsLoading(false);
+					setError(null);
+				} catch (error) {
+					setError("Error fetching data: " + error);
+					setIsLoading(false);
+				}
+			};
+			fetchProducts();
+		}
+	}, [isLoading, error, api]);
 
 	const sortingProducts = product.sort((a, b) => b.sales - a.sales);
+
 	return (
 		<>
 			<section className="top-products">
@@ -38,17 +51,12 @@ const TopProducts = () => {
 									src={product.image.src}
 									alt={product.title}
 								/>
-								<Link
-									to={{
-										pathname: `${PathConstants.PRODUCTS}${product.id}`,
-										state: {
-											variants: product.options[0].id,
-											idProduct: product.id,
-										},
-									}}
-								>
-									<h4 className="top-products__product-name">{product.id}</h4>
+
+								<Link to={PathConstants.PRODUCTS + product.id}>
+									<h4 className="top-products__product-name">{product.id}</h4>{" "}
 								</Link>
+								<h4 className="top-products__product-name">{product.id}</h4>
+
 								<h4 className="top-products__product-name">{product.title}</h4>
 							</article>
 						);

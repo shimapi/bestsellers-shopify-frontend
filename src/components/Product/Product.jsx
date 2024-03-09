@@ -22,18 +22,20 @@ const Product = () => {
 				setProduct(productApi);
 				//setLoading(false);
 				console.log("product", product);
-				//console.log("JSON", JSON.stringify(productApi, null, 2));
+				console.log("JSON", JSON.stringify(productApi, null, 2));
 			} catch (error) {
 				console.error("Error fetching data:", error);
 				//setLoading(false);
 			}
 		};
 		fetchProduct();
+		console.log("product", product);
 	}, [params.id]);
 
 	return (
 		<div>
 			Product {params.id}
+			<p>{product.id}</p>
 			<p>ID: {product.data.id}</p>
 			<p>Nombre: {product.data.title}</p>
 			<p>Precio: {product.data.variants[0].price}</p>
@@ -43,7 +45,7 @@ const Product = () => {
 			{product.data.images.length > 0 ? (
 				product.data.images.map((image, index) => (
 					<p key={index}>
-						Imagen {index + 1}: {image.src}
+						Imagen {index + 1} - {image.src}
 					</p>
 				))
 			) : (
