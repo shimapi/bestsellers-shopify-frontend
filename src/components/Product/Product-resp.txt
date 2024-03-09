@@ -1,0 +1,48 @@
+import "./Product.scss";
+import { useParams, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import PathConstants from "@/routes/pathConstants";
+import useApi from "@/custom-hooks/useApi.jsx";
+
+const Product = () => {
+	const { id } = useParams();
+	const location = useLocation();
+	const { variants } = location.state;
+
+	const [product, setProduct] = useState({});
+	//const [loading, setLoading] = useState(true);
+	//const [productID, setProductID] = useState("");
+
+	/* 	if (!idProduct) {
+		setProductID(id);
+	} */
+	console.log("id", id);
+	console.log("variants", variants);
+	//	console.log("productID", productID);
+	const api = useApi({
+		url: PathConstants.PRODUCTS + id,
+		method: "GET",
+	});
+	console.log(PathConstants.PRODUCTS + id);
+	console.log("variants", variants);
+
+	useEffect(() => {
+		const fetchProduct = async () => {
+			try {
+				const productApi = await api;
+				console.log("productApi", productApi);
+				setProduct(productApi);
+				//setLoading(false);
+				console.log("product", product);
+			} catch (error) {
+				console.error("Error fetching data:", error);
+				//	setLoading(false);
+			}
+		};
+		fetchProduct();
+	}, [api]);
+
+	return <div>Product {id}</div>;
+};
+
+export default Product;

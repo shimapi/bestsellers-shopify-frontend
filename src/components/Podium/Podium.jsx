@@ -1,13 +1,12 @@
 import Card from "../Card/Card";
 import "./Podium.scss";
-//import { products } from "../../utils/data.js";
 import PathConstants from "@/routes/pathConstants";
 import useApi from "@/custom-hooks/useApi.jsx";
 import { useEffect, useState } from "react";
 
 const Podium = () => {
 	const [product, setProduct] = useState([]);
-	const api = useApi({ url: PathConstants.FETCH_URL + "best", method: "GET" });
+	const api = useApi({ url: PathConstants.BEST, method: "GET" });
 
 	useEffect(() => {
 		const fetchProducts = async () => {

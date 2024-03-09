@@ -5,10 +5,12 @@ const PathConstants = {
   ABOUT: '/acerca-de',
   TOP_PRODUCTS: '/top-products',
   PAGE_404: '/404',
-  PRODUCT: '/product/:id',
-  PRODUCTS: '/product',
+  PRODUCTS: '/products/',
+  PRODUCT: '/products/:id',
   PODIUM: '/podium',
   FETCH: '/fetch',
+  BEST: '/best',
+  VARIANTS: '/variants',
 
   // External links
   INSTAGRAM: 'https://www.instagram.com/',
@@ -17,7 +19,8 @@ const PathConstants = {
   SHOPIFY: 'https://shimi-testing-api.myshopify.com/',
 
   // API
-  FETCH_URL: 'https://bestsellers-backend.vercel.app/',
+  FETCH_URL: 'https://bestsellers-backend.vercel.app',
 }
 
 export default PathConstants;
+

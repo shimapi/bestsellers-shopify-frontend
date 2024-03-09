@@ -6,11 +6,12 @@ import { useEffect, useState } from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 import TopProductsSkeleton from "./TopProductsSkeleton";
 import Skeleton from "react-loading-skeleton";
+import { Link } from "react-router-dom";
 
 const TopProducts = () => {
 	const [product, setProduct] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
-	const api = useApi({ url: PathConstants.FETCH_URL + "best", method: "GET" });
+	const api = useApi({ url: PathConstants.BEST, method: "GET" });
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -28,7 +29,8 @@ const TopProducts = () => {
 				{<Title sentence="Top 10" /> || <Skeleton />}
 				<div className="top-products__container">
 					{isLoading && <TopProductsSkeleton cards={10} />}
-					{sortingProducts.slice(0, 10).map((product, index) => {
+					{sortingProducts.slice(0, 2).map((product, index) => {
+						console.log(product);
 						return (
 							<article className="top-products__product" key={index}>
 								<img
@@ -36,6 +38,17 @@ const TopProducts = () => {
 									src={product.image.src}
 									alt={product.title}
 								/>
+								<Link
+									to={{
+										pathname: `${PathConstants.PRODUCTS}${product.id}`,
+										state: {
+											variants: product.options[0].id,
+											idProduct: product.id,
+										},
+									}}
+								>
+									<h4 className="top-products__product-name">{product.id}</h4>
+								</Link>
 								<h4 className="top-products__product-name">{product.title}</h4>
 							</article>
 						);

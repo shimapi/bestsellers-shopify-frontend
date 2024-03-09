@@ -49,6 +49,9 @@ function Nav() {
 						<Link to={PathConstants.FETCH}>Fetch</Link>
 					</div>
 					<div className="nav__menu-item">
+						<Link to={PathConstants.PRODUCTS + "9057067958565"}>Producto</Link>
+					</div>
+					<div className="nav__menu-item">
 						<Link to={PathConstants.TOP_PRODUCTS}>Más vendidos</Link>
 					</div>
 					<div className="nav__menu-item">

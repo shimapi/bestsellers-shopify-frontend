@@ -1,8 +1,10 @@
+import PathConstants from "@/routes/pathConstants";
+
 const useApi = async ({ url, method }) => {
 	const urlProp = url;
 	const methodProp = method;
 	try {
-		const response = await fetch(urlProp, {
+		const response = await fetch(PathConstants.FETCH_URL + urlProp, {
 			method: methodProp,
 			headers: {
 				"Content-Type": "application/json",
@@ -10,7 +12,6 @@ const useApi = async ({ url, method }) => {
 				"Access-Control-Allow-Origin": "*",
 			},
 		});
-
 		if (!response.ok) {
 			throw new Error(`HTTP error! status: ${response.status}`);
 		}

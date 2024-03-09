@@ -31,11 +31,11 @@ function App() {
 					element: <About />,
 				},
 				{
-					path: PathConstants.PRODUCT, // /product/:id
+					path: PathConstants.PRODUCT, // + ":id",
 					element: <Product />,
 				},
 				{
-					path: PathConstants.PRODUCTS, // /product
+					path: PathConstants.PRODUCTS,
 					element: <TopProducts />,
 				},
 				{
