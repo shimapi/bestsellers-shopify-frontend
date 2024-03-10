@@ -7,7 +7,6 @@ import "react-loading-skeleton/dist/skeleton.css";
 import TopProductsSkeleton from "./TopProductsSkeleton";
 import Skeleton from "react-loading-skeleton";
 import { Link } from "react-router-dom";
-//import Product from "../Product/Product";
 
 const TopProducts = () => {
 	const [product, setProduct] = useState([]);

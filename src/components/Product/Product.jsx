@@ -8,34 +8,62 @@ const Product = () => {
 	const params = useParams();
 	console.log("params", params);
 	const [product, setProduct] = useState({});
-	//const [loading, setLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(true);
+	const [error, setError] = useState(null);
+
 	const api = useApi({
 		url: PathConstants.PRODUCTS + params.id,
 		method: "GET",
 	});
 
 	console.log(PathConstants.PRODUCTS + params.id);
+
 	useEffect(() => {
-		const fetchProduct = async () => {
+		let isCancelled = false;
+		if (isLoading) {
+			const fetchProduct = async () => {
+				try {
+					const response = await api;
+					if (!isCancelled) {
+						setProduct(response);
+						console.log("product dentro de try", product);
+						console.log("fetching products api 1", response);
+					}
+					setIsLoading(false);
+					setError(null);
+				} catch (error) {
+					setError("Error fetching data: " + error);
+					setIsLoading(false);
+				}
+			};
+			console.log("product dentro de useEffect", product);
+			fetchProduct();
+			return () => {
+				isCancelled = true;
+			};
+		}
+	}, [isLoading, error, api]);
+	console.log("product fuera de useEffect", product);
+
+	/* 		const fetchProduct = async () => {
 			try {
 				const productApi = await api;
 				setProduct(productApi);
-				//setLoading(false);
+				setLoading(false);
 				console.log("product", product);
 				console.log("JSON", JSON.stringify(productApi, null, 2));
 			} catch (error) {
 				console.error("Error fetching data:", error);
-				//setLoading(false);
+				setLoading(false);
 			}
 		};
 		fetchProduct();
 		console.log("product", product);
-	}, [params.id]);
+	}, [params.id]); */
 
 	return (
 		<div>
 			Product {params.id}
-			<p>{product.id}</p>
 			<p>ID: {product.data.id}</p>
 			<p>Nombre: {product.data.title}</p>
 			<p>Precio: {product.data.variants[0].price}</p>
