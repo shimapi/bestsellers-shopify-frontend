@@ -51,7 +51,7 @@ const TopProducts = () => {
 									alt={product.title}
 								/>
 
-								<Link to={PathConstants.PRODUCTS + product.id}>
+								<Link to={`/products/${product.id}`}>
 									<h4 className="top-products__product-name">{product.id}</h4>{" "}
 								</Link>
 								<h4 className="top-products__product-name">{product.id}</h4>

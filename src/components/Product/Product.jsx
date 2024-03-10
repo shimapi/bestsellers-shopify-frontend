@@ -12,11 +12,11 @@ const Product = () => {
 	const [error, setError] = useState(null);
 
 	const api = useApi({
-		url: PathConstants.PRODUCTS + params.id,
+		url: PathConstants.PRODUCTS + params.productID,
 		method: "GET",
 	});
 
-	console.log(PathConstants.PRODUCTS + params.id);
+	console.log(PathConstants.PRODUCTS + params.productID);
 
 	useEffect(() => {
 		let isCancelled = false;
@@ -45,39 +45,24 @@ const Product = () => {
 	}, [isLoading, error, api]);
 	console.log("product fuera de useEffect", product);
 
-	/* 		const fetchProduct = async () => {
-			try {
-				const productApi = await api;
-				setProduct(productApi);
-				setLoading(false);
-				console.log("product", product);
-				console.log("JSON", JSON.stringify(productApi, null, 2));
-			} catch (error) {
-				console.error("Error fetching data:", error);
-				setLoading(false);
-			}
-		};
-		fetchProduct();
-		console.log("product", product);
-	}, [params.id]); */
-
 	return (
 		<div>
-			Product {params.id}
-			<p>ID: {product.data.id}</p>
-			<p>Nombre: {product.data.title}</p>
-			<p>Precio: {product.data.variants[0].price}</p>
-			<p>Stock: {product.data.variants[0].inventory_quantity}</p>
-			<p>Imagen: {product.data.image.src}</p>
-			<p>Descripción: {product.data.body_html}</p>
-			{product.data.images.length > 0 ? (
-				product.data.images.map((image, index) => (
-					<p key={index}>
-						Imagen {index + 1} - {image.src}
-					</p>
-				))
-			) : (
-				<p>No hay imágenes adicionales</p>
+			Product {params.productID}
+			{product.data && (
+				<>
+					<p>ID: {product.data.id}</p>
+					<p>Nombre: {product.data.title}</p>
+					<p>Precio: {product.data.variants[0].price}</p>
+					<p>Stock: {product.data.variants[0].inventory_quantity}</p>
+					<p>Imagen: {product.data.image.src}</p>
+					<p>Descripción: {product.data.body_html}</p>
+					{product.data.images.length > 0 &&
+						product.data.images.map((image, index) => (
+							<p key={index}>
+								Imagen {index + 1} - {image.src}
+							</p>
+						))}
+				</>
 			)}
 		</div>
 	);

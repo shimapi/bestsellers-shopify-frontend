@@ -6,7 +6,7 @@ const PathConstants = {
   TOP_PRODUCTS: '/top-products',
   PAGE_404: '/404',
   PRODUCTS: '/products/',
-  PRODUCT: '/products/:id',
+  PRODUCT: '/products/:productID',
   PODIUM: '/podium',
   FETCH: '/fetch',
   BEST: '/best',
