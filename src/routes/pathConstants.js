@@ -10,6 +10,7 @@ const PathConstants = {
   PODIUM: '/podium',
   FETCH: '/fetch',
   BEST: '/best',
+  AMOUR: '/amour',
   VARIANTS: '/variants',
 
   // External links

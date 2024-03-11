@@ -1,5 +1,4 @@
-
-@import './utils/css-variables.scss';
+@import "./utils/css-variables.scss";
 
 :root {
 	font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
@@ -15,7 +14,7 @@
 }
 
 body {
-	padding:0;
+	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 	min-width: 320px;
@@ -29,11 +28,34 @@ body {
 .body-theme__dark {
 	background-color: $color-background;
 	color: $color-text;
+
+	a {
+		color: $color-text;
+		text-decoration: none;
+		font-weight: $font-title-weight;
+	}
+
+	a:hover {
+		color: $color-light-accent;
+		text-decoration: $color-accent2 wavy underline;
+	}
 }
 
 .body-theme__light {
 	background-color: $color-text;
 	color: $color-background;
+
+	a {
+		color: $color-background;
+		text-decoration: none;
+		font-weight: $font-title-weight;
+		cursor: pointer;
+	}
+
+	a:hover {
+		color: $color-accent1;
+		text-decoration: $color-light-accent wavy underline;
+	}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,7 +74,6 @@ body {
 	}
 }
 
-
 @media (768px <= width <= 1024px) {
 	body {
 		background-color: blue;
@@ -66,5 +87,5 @@ body {
 @media (1440px <= width) {
 	body {
 		background-color: yellow;
-	}	
+	}
 }

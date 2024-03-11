@@ -1,24 +1,25 @@
-@import 'https://fonts.googleapis.com/css2?family=Amaranth:wght@700&display=swap';
-@import 'https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap';
-@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap';
+@import "https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap";
 
 /* COLORS */
 $color-darker: #071220;
-$color-accent1: #B32570;
-$color-accent2: #FECD1A;
-$color-background: #12253D;
+$color-accent1: #b32570;
+$color-accent2: #fecd1a;
+$color-background: #12253d;
 $color-text: #fff8df;
 $color-black: #000;
+$color-light-accent: #ebbfec;
 
 /* FONTS */
-$font-title: 'Amaranth', 'Arial', sans-serif;
+$font-title: "Amaranth", "Arial", sans-serif;
 $font-title-weight: 700;
 $font-title-size: 2.5rem;
 
-$font-subtitle: 'Quicksand', 'Arial', sans-serif;
+$font-subtitle: "Quicksand", "Arial", sans-serif;
 $font-subtitle-weight: 700;
 $font-subtitle-size: 1.5rem;
 
-$font-text: 'Montserrat', 'Arial', sans-serif;
+$font-text: "Montserrat", "Arial", sans-serif;
 $font-text-weight: 400;
 $font-text-size: 1rem;

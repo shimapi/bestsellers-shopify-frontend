@@ -26,8 +26,6 @@ const Product = () => {
 					const response = await api;
 					if (!isCancelled) {
 						setProduct(response);
-						console.log("product dentro de try", product);
-						console.log("fetching products api 1", response);
 					}
 					setIsLoading(false);
 					setError(null);
@@ -36,35 +34,70 @@ const Product = () => {
 					setIsLoading(false);
 				}
 			};
-			console.log("product dentro de useEffect", product);
 			fetchProduct();
 			return () => {
 				isCancelled = true;
 			};
 		}
 	}, [isLoading, error, api]);
-	console.log("product fuera de useEffect", product);
+
+	useEffect(() => {
+		if (product.data) {
+			document.title = product.data.title + " ✨ BestSellers";
+		}
+	}, [product]);
+
+	console.log("product {}", product);
 
 	return (
-		<div>
-			Product {params.productID}
+		<main className="product">
 			{product.data && (
 				<>
-					<p>ID: {product.data.id}</p>
-					<p>Nombre: {product.data.title}</p>
-					<p>Precio: {product.data.variants[0].price}</p>
-					<p>Stock: {product.data.variants[0].inventory_quantity}</p>
-					<p>Imagen: {product.data.image.src}</p>
-					<p>Descripción: {product.data.body_html}</p>
-					{product.data.images.length > 0 &&
-						product.data.images.map((image, index) => (
-							<p key={index}>
-								Imagen {index + 1} - {image.src}
-							</p>
-						))}
+					<div className="product__container">
+						<section className="product__images">
+							<div className="product__main-image">
+								<img src={product.data.image.src} className="product__image" />
+							</div>
+							<div className="product__all-images">
+								{product.data.images.length > 0 &&
+									product.data.images.map((image, index) => (
+										<div key={index} className="product__image-container">
+											<img src={image.src} className="product__image" />
+										</div>
+									))}
+							</div>
+						</section>
+						<section className="product__info">
+							<span className="product__sku">SKU: {product.data.id}</span>
+							<h1 className="product__title">{product.data.title}</h1>
+							<span className="product__price">
+								${product.data.variants[0].price}
+							</span>
+							<span className="product__stock">
+								Stock: {product.data.variants[0].inventory_quantity}
+							</span>
+							{product.data.variants[0].sku ? (
+								<span className="product__stock">
+									SKU: ${product.data.variants[0].sku}
+								</span>
+							) : (
+								""
+							)}
+							<span className="product__stock">
+								ImageID: {product.data.variants[0].image_id}
+							</span>
+
+							<button className="product__buy">Ir al producto</button>
+							<section className="product__description">
+								<div
+									dangerouslySetInnerHTML={{ __html: product.data.body_html }}
+								/>
+							</section>
+						</section>
+					</div>
 				</>
 			)}
-		</div>
+		</main>
 	);
 };
 

@@ -7,7 +7,6 @@ import Layout from "../Layout/Layout.jsx";
 import About from "../About/About.jsx";
 import Page404 from "../Page404/Page404.jsx";
 import Product from "../Product/Product.jsx";
-import Fetch from "../Fetch/Fetch";
 import Home from "../Home/Home";
 
 function App() {
@@ -42,10 +41,7 @@ function App() {
 					path: PathConstants.PODIUM,
 					element: <Main />,
 				},
-				{
-					path: PathConstants.FETCH,
-					element: <Fetch />,
-				},
+
 				{
 					path: "*",
 					element: <Page404 />,
