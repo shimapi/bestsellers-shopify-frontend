@@ -38,28 +38,29 @@ const TopProducts = () => {
 	return (
 		<>
 			<section className="top-products">
-				{<Title sentence="Top 10" /> || <Skeleton />}
+				{<Title sentence="Los más amados" /> || <Skeleton />}
 				<div className="top-products__container">
 					{isLoading && <TopProductsSkeleton cards={10} />}
 					{sortingProducts.slice(0, 10).map((product, index) => {
 						console.log(product);
 						return (
-							<article className="top-products__product" key={index}>
-								<img
-									className="top-products__product-image"
-									src={product.image.src}
-									alt={product.title}
-								/>
+							<Link
+								to={`/products/${product.id}`}
+								className="top-products__product-link"
+								key={index}
+							>
+								<article className="top-products__product" key={index}>
+									<img
+										className="top-products__product-image"
+										src={product.image.src}
+										alt={product.title}
+									/>
 
-								<Link
-									to={`/products/${product.id}`}
-									className="top-products__product-link"
-								>
 									<h4 className="top-products__product-name">
 										{product.title}
 									</h4>
-								</Link>
-							</article>
+								</article>
+							</Link>
 						);
 					})}
 				</div>

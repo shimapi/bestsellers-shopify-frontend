@@ -10,7 +10,13 @@ import PathConstants from "../../routes/pathConstants";
 const Footer = () => {
 	return (
 		<>
-			<Title sentence="Quiero visitar la tienda completa" />
+			<Link
+				to={PathConstants.SHOPIFY}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<Title sentence="Quiero visitar la tienda completa" />
+			</Link>
 
 			<footer className="footer">
 				<div className="footer__container">
@@ -72,7 +78,13 @@ const Footer = () => {
 					</p>
 					<p className="footer__text">
 						Diseñado con &#x2764;&#xfe0e; por &nbsp;
-						<Link to={PathConstants.SHIMI}>@shirleymallea</Link>
+						<Link
+							to={PathConstants.SHIMI}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							@shirleymallea
+						</Link>
 					</p>
 				</div>
 			</footer>

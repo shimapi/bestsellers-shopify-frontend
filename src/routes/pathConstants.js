@@ -14,10 +14,11 @@ const PathConstants = {
   VARIANTS: '/variants',
 
   // External links
-  INSTAGRAM: 'https://www.instagram.com/',
-  FACEBOOK: 'https://www.facebook.com/',
-  TIKTOK: 'https://www.tiktok.com/',
-  SHOPIFY: 'https://shimi-testing-api.myshopify.com/',
+  INSTAGRAM: 'https://www.instagram.com/altorrelieve',
+  FACEBOOK: 'https://www.facebook.com/altorrelieve',
+  TIKTOK: 'https://www.tiktok.com/@altorrelieve',
+  SHOPIFY: 'https://altorrelieve.cl/',
+  SHIMI: 'https://www.instagram.com/shirleymallea',
 
   // API
   FETCH_URL: 'https://bestsellers-backend.vercel.app',
