@@ -14,7 +14,7 @@ const Podium = () => {
 			setProduct(products);
 		};
 		fetchProducts();
-	}, []);
+	}, [api]);
 
 	const sortingProducts = product.sort((a, b) => b.sales - a.sales);
 	return (

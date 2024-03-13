@@ -41,7 +41,6 @@ function App() {
 					path: PathConstants.PODIUM,
 					element: <Main />,
 				},
-
 				{
 					path: "*",
 					element: <Page404 />,
