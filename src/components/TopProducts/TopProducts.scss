@@ -53,32 +53,37 @@
 	}
 }
 
-@media (width <= 768px) {
-	.top-products__container {
-		max-width: 70%;
-		width: 70%;
+@media (max-width: 768px) {
+	.top-products {
+		position: relative;
+		top: $nav-mobile-height;
+
+		&__container {
+			max-width: 70%;
+			width: 70%;
+		}
 	}
 }
 
-@media (768px <= width <= 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
 	.top-products__container {
 		max-width: 768px;
 		width: 768px;
 	}
 }
-@media (1024px <= width <= 1440px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
 	.top-products__container {
 		max-width: 1024px;
 		width: 1024px;
 	}
 }
-@media (1440px <= width) {
+@media (min-width: 1440px) {
 	.top-products__container {
 		max-width: 940px;
 		width: 940px;
 	}
 }
-@media (768px <= width) {
+@media (min-width: 768px) {
 	.top-products {
 		&__container {
 			display: grid;

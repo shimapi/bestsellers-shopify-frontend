@@ -27,3 +27,13 @@ $font-text-size: 1rem;
 $font-product-title: "Amaranth", "Arial", sans-serif;
 $font-product-title-weight: 700;
 $font-product-title-size: 2rem;
+
+/* CARDS */
+$height-firstPlace: 150px;
+$height-secondPlace: $height-firstPlace * 0.6;
+$height-thirdPlace: $height-firstPlace * 0.3;
+$height-card: 300px;
+$width-card: 300px;
+
+/* NAV */
+$nav-mobile-height: 56px;

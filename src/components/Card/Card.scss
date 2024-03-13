@@ -1,11 +1,5 @@
 @import "../../utils/css-variables.scss";
 
-$height-firstPlace: 150px;
-$height-secondPlace: $height-firstPlace * 0.6;
-$height-thirdPlace: $height-firstPlace * 0.3;
-$height-card: 300px;
-$width-card: 300px;
-
 .card {
 	width: $width-card;
 	height: $height-card;
@@ -33,6 +27,10 @@ $width-card: 300px;
 		cursor: pointer;
 		width: $width-card;
 		height: $height-card;
+		//ading some blur on :hover
+		&:hover {
+			filter: blur(2px);
+		}
 	}
 	&__flipped {
 		--rotate-y: 180deg;
@@ -118,8 +116,6 @@ $width-card: 300px;
 		&-third {
 			order: 3;
 			height: $height-thirdPlace + $height-card;
-		}
-		&__image {
 		}
 		&__place {
 			border-radius: 12px 12px 0 0;
