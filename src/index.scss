@@ -58,6 +58,34 @@ body {
 	}
 }
 
+a.button {
+	padding: 12px;
+	background-color: $color-accent2;
+	border-radius: 8px;
+	color: $color-background;
+	font-size: $font-text-size;
+	font-weight: $font-subtitle-weight;
+	letter-spacing: 1px;
+	font-family: $font-subtitle;
+	cursor: pointer;
+	border: none;
+	transform: scale(1);
+	transition: all 0.3s ease;
+	text-align: center;
+	text-shadow: none;
+
+	&:hover {
+		background-color: $color-accent1;
+		color: $color-text;
+		letter-spacing: 2px;
+		text-decoration: none;
+	}
+	&:active {
+		transform: scale(0.95);
+		text-decoration: none;
+	}
+}
+
 @media (prefers-color-scheme: dark) {
 	body {
 		/* Estilos para el esquema de color oscuro del cliente */

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Card.scss";
+import { Link } from "react-router-dom";
 
 const Card = ({ winnerProduct, product }) => {
 	const [winnerProductPlace, setWinnerProductPlace] = useState(0);
@@ -30,8 +31,18 @@ const Card = ({ winnerProduct, product }) => {
 				</div>
 
 				<div className="card__flip-back" onClick={() => setFlip(!flip)}>
-					<h3>{product.title}</h3>
-					<p>{product.title}</p>
+					<img
+						className="card__back-image"
+						src={product.images[2].src || product.image.src}
+						alt={product.title}
+					/>
+					<div className="card__back-product-info">
+						<h3>{product.title}</h3>
+
+						<Link to={`/products/${product.id}`} className="button">
+							ver producto
+						</Link>
+					</div>
 				</div>
 			</div>
 

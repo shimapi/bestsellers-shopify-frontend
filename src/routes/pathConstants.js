@@ -19,6 +19,7 @@ const PathConstants = {
   TIKTOK: 'https://www.tiktok.com/@altorrelieve',
   SHOPIFY: 'https://altorrelieve.cl/',
   SHIMI: 'https://www.instagram.com/shirleymallea',
+  SHOPIFY_PRODUCTS: 'https://altorrelieve.cl/products/',
 
   // API
   FETCH_URL: 'https://bestsellers-backend.vercel.app',

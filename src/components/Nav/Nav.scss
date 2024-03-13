@@ -51,14 +51,14 @@
 	a {
 		text-decoration: none;
 		color: $color-text;
-		:hover {
-			color: $color-accent1;
-			text-decoration: none;
-		}
+	}
+	a:hover {
+		color: $color-accent1;
+		text-decoration: none;
 	}
 	&__menu-link,
 	a {
-		height: 42px;
+		height: 50px;
 		display: flex;
 		align-items: center;
 		justify-content: center;

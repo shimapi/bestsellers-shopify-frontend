@@ -27,10 +27,6 @@
 		cursor: pointer;
 		width: $width-card;
 		height: $height-card;
-		//ading some blur on :hover
-		&:hover {
-			filter: blur(2px);
-		}
 	}
 	&__flipped {
 		--rotate-y: 180deg;
@@ -43,11 +39,32 @@
 	}
 	&__flip-back {
 		position: absolute;
-		background-color: $color-accent1;
 		transform: rotateY(180deg);
 		backface-visibility: hidden;
 		width: $width-card;
 		height: $height-card;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	&__back-image {
+		border-radius: 12px;
+		width: $width-card - 20px;
+		height: $height-card - 20px;
+		filter: contrast(0.5);
+		position: relative;
+		top: 0;
+	}
+	&__back-product-info {
+		position: absolute;
+		width: $width-card - 40px;
+		height: $height-card - 40px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-shadow: 0px 0px 4px $color-background;
 	}
 }
 @media (max-width: 768px) {

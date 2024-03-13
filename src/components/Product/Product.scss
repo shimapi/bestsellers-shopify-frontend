@@ -72,11 +72,6 @@
 		object-fit: cover;
 		position: absolute;
 		border: none;
-		/* 	transition: all 0.3s ease;
-
-		&:hover {
-			transform: scale(1.05);
-		} */
 	}
 
 	&__all-images {
@@ -95,6 +90,7 @@
 		border: 1px solid #ffffff33;
 		box-shadow: 0 0 8px 0 #00000033;
 		transition: all 0.3s ease;
+
 		&:hover {
 			transform: scale(1.05);
 		}
@@ -131,29 +127,6 @@
 		margin: 0 0 16px 0;
 		letter-spacing: 1px;
 		font-family: $font-subtitle;
-	}
-	&__buy {
-		height: 40px;
-		background-color: $color-accent1;
-		border-radius: 8px;
-		color: $color-text;
-		font-size: $font-text-size;
-		font-weight: $font-subtitle-weight;
-		letter-spacing: 1px;
-		text-transform: uppercase;
-		font-family: $font-subtitle;
-		cursor: pointer;
-		border: none;
-		transform: scale(1);
-		transition: all 0.3s ease;
-
-		&:hover {
-			background-color: $color-accent2;
-			color: $color-background;
-		}
-		&:active {
-			transform: scale(0.95);
-		}
 	}
 }
 

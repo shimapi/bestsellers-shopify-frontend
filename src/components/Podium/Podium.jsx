@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const Podium = () => {
 	const [product, setProduct] = useState([]);
-	const api = useApi({ url: PathConstants.BEST, method: "GET" });
+	const api = useApi({ url: PathConstants.AMOUR, method: "GET" });
 
 	useEffect(() => {
 		const fetchProducts = async () => {

@@ -6,7 +6,6 @@ import useApi from "../../custom-hooks/useApi";
 
 const Product = () => {
 	const params = useParams();
-	console.log("params", params);
 	const [product, setProduct] = useState({});
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -15,8 +14,6 @@ const Product = () => {
 		url: PathConstants.PRODUCTS + params.productID,
 		method: "GET",
 	});
-
-	console.log(PathConstants.PRODUCTS + params.productID);
 
 	useEffect(() => {
 		let isCancelled = false;
@@ -76,26 +73,21 @@ const Product = () => {
 						</div>
 					</section>
 					<section className="product__info">
-						<span className="product__sku">SKU: {product.data.id}</span>
+						<span className="product__sku">
+							SKU: {product.data.id} · {product.data.product_type}
+						</span>
 						<h1 className="product__title">{product.data.title}</h1>
 						<span className="product__price">
 							$ {product.data.variants[0].price}.-
 						</span>
-						{/* 							<span className="product__stock">
-								Stock: {product.data.variants[0].inventory_quantity}
-							</span> */}
-						{product.data.variants[0].sku ? (
-							<span className="product__stock">
-								SKU: ${product.data.variants[0].sku}
-							</span>
-						) : (
-							""
-						)}
-						{/* <span className="product__stock">
-								ImageID: {product.data.variants[0].image_id}
-							</span> */}
 
-						<button className="product__buy">Ir al producto</button>
+						<a
+							href={`${PathConstants.SHOPIFY_PRODUCTS}${product.data.handle}`}
+							className="button product__button"
+							target="_blank"
+						>
+							Ir al producto
+						</a>
 						<section className="product__description">
 							<div
 								dangerouslySetInnerHTML={{ __html: product.data.body_html }}

@@ -30,6 +30,10 @@ function Nav() {
 		setShowMenu(showMenu === "open" ? "closed" : "open");
 	}
 
+	function handleHideMenu() {
+		setShowMenu("closed");
+	}
+
 	return (
 		<nav className={`nav ${menuType}`}>
 			<div className="nav__container">
@@ -45,13 +49,25 @@ function Nav() {
 					/>
 				</div>
 				<div className={`nav__menu nav__${showMenu}`}>
-					<Link to={PathConstants.TOP_PRODUCTS} className="nav__menu-link">
+					<Link
+						to={PathConstants.TOP_PRODUCTS}
+						className="nav__menu-link"
+						onClick={handleHideMenu}
+					>
 						<div className="nav__menu-item">Más vendidos</div>
 					</Link>
-					<Link to={PathConstants.ABOUT} className="nav__menu-link">
+					<Link
+						to={PathConstants.ABOUT}
+						className="nav__menu-link"
+						onClick={handleHideMenu}
+					>
 						<div className="nav__menu-item">Acerca de</div>
 					</Link>
-					<Link to={PathConstants.PODIUM} className="nav__menu-link">
+					<Link
+						to={PathConstants.PODIUM}
+						className="nav__menu-link"
+						onClick={handleHideMenu}
+					>
 						<div className="nav__menu-item">Ver top 3</div>
 					</Link>
 				</div>
