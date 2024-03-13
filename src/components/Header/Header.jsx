@@ -12,6 +12,7 @@ const Header = () => {
 					src={sparklesImg}
 					alt="sparkles"
 					className="header__sparkles header__sparkles-last"
+					loading="lazy"
 				/>
 			</div>
 		</header>

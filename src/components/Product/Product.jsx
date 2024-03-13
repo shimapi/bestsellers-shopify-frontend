@@ -58,6 +58,7 @@ const Product = () => {
 									src={product.data.image.src}
 									className="product__image"
 									alt={product.data.title}
+									loading="lazy"
 									/* 	onClick={handleModalOpen} */
 								/>
 							</div>

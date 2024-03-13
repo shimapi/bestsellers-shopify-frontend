@@ -26,6 +26,7 @@ const Card = ({ winnerProduct, product }) => {
 							className="card__image"
 							src={product.image.src}
 							alt={product.title}
+							loading="lazy"
 						/>
 					</div>
 				</div>
@@ -35,6 +36,7 @@ const Card = ({ winnerProduct, product }) => {
 						className="card__back-image"
 						src={product.images[2].src || product.image.src}
 						alt={product.title}
+						loading="lazy"
 					/>
 					<div className="card__back-product-info">
 						<h3>{product.title}</h3>

@@ -62,12 +62,15 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		transform: scale(1);
+		transition: all 0.3s ease;
 	}
 	&__menu-link:hover,
-	selected {
+	.selected {
 		border-bottom: 5px solid $color-accent1;
 		color: $color-accent1;
 		text-decoration: none;
+		transform: scale(1);
 	}
 }
 
