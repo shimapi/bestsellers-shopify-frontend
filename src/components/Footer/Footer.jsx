@@ -67,16 +67,6 @@ const Footer = () => {
 						</Link>
 					</div>
 					<p className="footer__text">
-						Información tomada de &nbsp;
-						<Link
-							to={PathConstants.SHOPIFY}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							@altorrelieve (gracias &#x2764;&#xfe0e;)
-						</Link>
-					</p>
-					<p className="footer__text">
 						Diseñado con &#x2764;&#xfe0e; por &nbsp;
 						<Link
 							to={PathConstants.SHIMI}
@@ -84,6 +74,14 @@ const Footer = () => {
 							rel="noopener noreferrer"
 						>
 							@shirleymallea
+						</Link>
+						para
+						<Link
+							to={PathConstants.SHOPIFY}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							@altorrelieve
 						</Link>
 					</p>
 				</div>

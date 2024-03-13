@@ -13,14 +13,13 @@ const TopProducts = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(null);
 
-	const api = useApi({ url: PathConstants.AMOUR, method: "GET" });
+	const api = useApi({ url: PathConstants.BEST, method: "GET" });
 
 	useEffect(() => {
 		if (isLoading) {
 			const fetchProducts = async () => {
 				try {
 					const response = await api;
-					console.log("fetching products api 1", response);
 					setProduct(response);
 					setIsLoading(false);
 					setError(null);
@@ -31,7 +30,7 @@ const TopProducts = () => {
 			};
 			fetchProducts();
 		}
-	}, [isLoading, error, api]);
+	}, [error, api, isLoading]);
 
 	const sortingProducts = product.sort((a, b) => b.sales - a.sales);
 
@@ -42,7 +41,6 @@ const TopProducts = () => {
 				<div className="top-products__container">
 					{isLoading && <TopProductsSkeleton cards={10} />}
 					{sortingProducts.slice(0, 10).map((product, index) => {
-						console.log(product);
 						return (
 							<Link
 								to={`/products/${product.id}`}

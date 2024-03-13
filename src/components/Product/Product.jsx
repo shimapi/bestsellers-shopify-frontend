@@ -36,7 +36,7 @@ const Product = () => {
 				isCancelled = true;
 			};
 		}
-	}, [isLoading, error, api]);
+	}, [error, api, isLoading]);
 
 	useEffect(() => {
 		if (product.data) {

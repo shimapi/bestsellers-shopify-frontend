@@ -8,6 +8,12 @@
 		border-radius: 12px;
 		width: $width-card - 20px;
 		height: $height-card - 20px;
+		transform: scale(1);
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(1.05);
+		}
 	}
 	&__place {
 		background-color: $color-accent2;
@@ -55,6 +61,12 @@
 		filter: contrast(0.5);
 		position: relative;
 		top: 0;
+		transform: scale(1);
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(1.05);
+		}
 	}
 	&__back-product-info {
 		position: absolute;
