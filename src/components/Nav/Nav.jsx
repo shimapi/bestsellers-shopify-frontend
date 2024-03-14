@@ -9,6 +9,7 @@ function Nav() {
 	const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
 	const [showMenu, setShowMenu] = useState("closed");
 	const [menuType, setMenuType] = useState("mobile");
+	const [selected, setSelected] = useState("");
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -28,10 +29,12 @@ function Nav() {
 
 	function handleShowMenu() {
 		setShowMenu(showMenu === "open" ? "closed" : "open");
+		setSelected("");
 	}
 
 	function handleHideMenu() {
 		setShowMenu("closed");
+		setSelected("selected");
 	}
 
 	return (
@@ -54,21 +57,21 @@ function Nav() {
 						className="nav__menu-link"
 						onClick={handleHideMenu}
 					>
-						<div className="nav__menu-item">Más vendidos</div>
+						<div className={`nav__menu-item ${selected}`}>Más vendidos</div>
 					</Link>
 					<Link
 						to={PathConstants.ABOUT}
 						className="nav__menu-link"
 						onClick={handleHideMenu}
 					>
-						<div className="nav__menu-item">Acerca de</div>
+						<div className={`nav__menu-item ${selected}`}>Acerca de</div>
 					</Link>
 					<Link
 						to={PathConstants.PODIUM}
 						className="nav__menu-link"
 						onClick={handleHideMenu}
 					>
-						<div className="nav__menu-item">Ver top 3</div>
+						<div className={`nav__menu-item ${selected}`}>Ver top 3</div>
 					</Link>
 				</div>
 			</div>

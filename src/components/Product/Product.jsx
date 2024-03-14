@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PathConstants from "../../routes/pathConstants";
 import useApi from "../../custom-hooks/useApi";
+import "react-loading-skeleton/dist/skeleton.css";
+import ProductSkeleton from "./ProductSkeleton";
+//import Skeleton from "react-loading-skeleton";
 
 const Product = () => {
 	const params = useParams();
@@ -36,7 +39,7 @@ const Product = () => {
 				isCancelled = true;
 			};
 		}
-	}, [error, api, isLoading]);
+	}, [api, error, isLoading]);
 
 	useEffect(() => {
 		if (product.data) {
@@ -48,6 +51,7 @@ const Product = () => {
 
 	return (
 		<main className="product">
+			{isLoading && <ProductSkeleton />}
 			{product.data && (
 				<div className="product__container">
 					<section className="product__images">
@@ -68,7 +72,11 @@ const Product = () => {
 							{product.data.images.length > 0 &&
 								product.data.images.map((image, index) => (
 									<div key={index} className="product__image-container">
-										<img src={image.src} className="product__image" />
+										<img
+											src={image.src}
+											className="product__image"
+											loading="lazy"
+										/>
 									</div>
 								))}
 						</div>

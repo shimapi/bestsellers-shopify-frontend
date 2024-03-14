@@ -13,7 +13,7 @@ const TopProducts = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(null);
 
-	const api = useApi({ url: PathConstants.BEST, method: "GET" });
+	const api = useApi({ url: PathConstants.AMOUR, method: "GET" });
 
 	useEffect(() => {
 		if (isLoading) {

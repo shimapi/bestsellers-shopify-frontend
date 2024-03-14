@@ -58,19 +58,20 @@
 	}
 	&__menu-link,
 	a {
-		height: 50px;
+		height: 52px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		transform: scale(1);
 		transition: all 0.3s ease;
+		box-sizing: border-box;
 	}
 	&__menu-link:hover,
 	.selected {
 		border-bottom: 5px solid $color-accent1;
 		color: $color-accent1;
 		text-decoration: none;
-		transform: scale(1);
+		transform: scale(1.05);
 	}
 }
 
