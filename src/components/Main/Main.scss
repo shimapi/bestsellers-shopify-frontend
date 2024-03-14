@@ -1,12 +1,12 @@
-@import '../../utils/css-variables.scss';
+@import "../../utils/css-variables.scss";
 
-.main{
+.main {
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
 	margin-top: 80px;
 
-	&__container{
+	&__container {
 		position: relative;
 		text-align: center;
 		display: flex;
@@ -15,34 +15,36 @@
 	}
 }
 
-@media (width <= 768px) { 
-  .main__container{
-    flex-direction: column;
-  }
+@media (max-width: 768px) {
+	.main__container {
+		flex-direction: column;
+		max-width: 70%;
+		width: 70%;
+	}
 }
 
-@media (768px <= width <= 1024px) {
-	.main__container{
-		max-width: 768px;
-		width: 768px;
+@media (min-width: 768px) and (max-width: 1024px) {
+	.main__container {
+		max-width: 700px;
+		width: 700px;
 	}
 }
-@media (1024px <= width <= 1440px) {
-	.main__container{
-		max-width: 1024px;
-		width: 1024px;
+@media (min-width: 1024px) and (max-width: 1440px) {
+	.main__container {
+		max-width: 900px;
+		width: 900px;
 	}
 }
-@media (1440px <= width) {
-	.main__container{
-    max-width: 1440px;
-    width: 1440px;
+@media (min-width: 1440px) {
+	.main__container {
+		max-width: 940px;
+		width: 940px;
 	}
 }
-@media (768px <= width) {
-  .main__container{
+@media (min-width: 768px) {
+	.main__container {
 		display: flex;
-    align-items: flex-end;
-    justify-content: center;
-  }
+		align-items: flex-end;
+		justify-content: center;
+	}
 }

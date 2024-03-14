@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import PathConstants from "../../routes/pathConstants";
 import "./Nav.scss";
 import closeImg from "../../images/close.svg";
@@ -9,7 +9,6 @@ function Nav() {
 	const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
 	const [showMenu, setShowMenu] = useState("closed");
 	const [menuType, setMenuType] = useState("mobile");
-	const [selected, setSelected] = useState("");
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -29,12 +28,10 @@ function Nav() {
 
 	function handleShowMenu() {
 		setShowMenu(showMenu === "open" ? "closed" : "open");
-		setSelected("");
 	}
 
 	function handleHideMenu() {
 		setShowMenu("closed");
-		setSelected("selected");
 	}
 
 	return (
@@ -42,7 +39,7 @@ function Nav() {
 			<div className="nav__container">
 				<div className="nav__logo">
 					<h2 className="nav__name">
-						<Link to={PathConstants.HOME}>BestSellers</Link>
+						<NavLink to={PathConstants.HOME}>BestSellers</NavLink>
 					</h2>
 					<img
 						onClick={handleShowMenu}
@@ -52,27 +49,27 @@ function Nav() {
 					/>
 				</div>
 				<div className={`nav__menu nav__${showMenu}`}>
-					<Link
+					<NavLink
 						to={PathConstants.TOP_PRODUCTS}
 						className="nav__menu-link"
 						onClick={handleHideMenu}
 					>
-						<div className={`nav__menu-item ${selected}`}>Más vendidos</div>
-					</Link>
-					<Link
+						<div className="nav__menu-item">Más vendidos</div>
+					</NavLink>
+					<NavLink
 						to={PathConstants.ABOUT}
 						className="nav__menu-link"
 						onClick={handleHideMenu}
 					>
-						<div className={`nav__menu-item ${selected}`}>Acerca de</div>
-					</Link>
-					<Link
+						<div className="nav__menu-item">Acerca de</div>
+					</NavLink>
+					<NavLink
 						to={PathConstants.PODIUM}
 						className="nav__menu-link"
 						onClick={handleHideMenu}
 					>
-						<div className={`nav__menu-item ${selected}`}>Ver top 3</div>
-					</Link>
+						<div className="nav__menu-item">Ver top 3</div>
+					</NavLink>
 				</div>
 			</div>
 		</nav>

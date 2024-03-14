@@ -1,31 +1,35 @@
-@import '../../utils/css-variables.scss';
+@import "../../utils/css-variables.scss";
 
-@media (width <= 768px) { 
-  .base{
-    display:none;
-  }
+.base {
+	transition: all 0.3s ease;
 }
-@media (768px <= width <= 1024px) {
-  .base{
-    width: 105%;
-  }
+
+@media (max-width: 768px) {
+	.base {
+		display: none;
+	}
 }
-@media (1024px <= width <= 1440px) {
-  .base{
-    width: 100%;
-  }
+@media (min-width: 768px) and (max-width: 1024px) {
+	.base {
+		width: 700px;
+	}
 }
-@media (1440px <= width) {
-  .base{
-    width: 70%;
-  }
+@media (min-width: 1024px) and (max-width: 1440px) {
+	.base {
+		width: 900px;
+	}
 }
-@media (768px <= width) {
-  .base{
-    background-color: #b4b4b4;
-    height: 20px;
-    position: absolute;
-    border: 10px rgb(91 85 85 / 24%) inset;
-    border-radius: 12px 12px 0 0;
-  }
+@media (min-width: 1440px) {
+	.base {
+		width: 940px;
+	}
+}
+@media (min-width: 768px) {
+	.base {
+		background-color: #b4b4b4;
+		height: 20px;
+		position: absolute;
+		border: 10px rgb(91 85 85 / 24%) inset;
+		border-radius: 12px 12px 0 0;
+	}
 }

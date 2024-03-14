@@ -32,8 +32,9 @@ $font-product-title-size: 2rem;
 $height-firstPlace: 150px;
 $height-secondPlace: $height-firstPlace * 0.6;
 $height-thirdPlace: $height-firstPlace * 0.3;
-$height-card: 300px;
-$width-card: 300px;
+$height-card: 100%;
+$width-card: 100%;
+$height-container: 250px;
 
 /* NAV */
 $nav-mobile-height: 56px;

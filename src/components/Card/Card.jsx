@@ -18,7 +18,7 @@ const Card = ({ winnerProduct, product }) => {
 	}, [winnerProduct]);
 
 	return (
-		<article className={`card card-${winnerProductPlace}`}>
+		<article className={`card-${winnerProductPlace} card`}>
 			<div className={`card__flip ${flip ? "card__flipped" : ""}`}>
 				<div className="card__flip-front" onClick={() => setFlip(!flip)}>
 					<div className="card__flip-front">

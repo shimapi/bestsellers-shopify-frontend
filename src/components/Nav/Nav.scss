@@ -65,9 +65,10 @@
 		transform: scale(1);
 		transition: all 0.3s ease;
 		box-sizing: border-box;
+		padding: 0 10px;
 	}
 	&__menu-link:hover,
-	.selected {
+	a.active {
 		border-bottom: 5px solid $color-accent1;
 		color: $color-accent1;
 		text-decoration: none;
@@ -75,8 +76,7 @@
 	}
 }
 
-@media (width <= 768px) {
-	// this is for mobile/tablet
+@media (max-width: 768px) {
 	.nav {
 		background-color: $color-darker;
 		transition: all 0.5s ease-in-out;
@@ -115,19 +115,19 @@
 		}
 	}
 }
-@media (768px <= width <= 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
 	.nav__container {
 		max-width: 768px;
 		width: 768px;
 	}
 }
-@media (1024px <= width <= 1440px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
 	.nav__container {
 		max-width: 1024px;
 		width: 1024px;
 	}
 }
-@media (1440px <= width) {
+@media (min-width: 1440px) {
 	.nav__container {
 		max-width: 1440px;
 		width: 1440px;
