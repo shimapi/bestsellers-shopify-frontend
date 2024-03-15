@@ -6,11 +6,7 @@ const Main = () => {
 	return (
 		<>
 			<Header />
-			<main className="main">
-				<div className="main__container">
-					<Podium />
-				</div>
-			</main>
+			<Podium />
 		</>
 	);
 };
