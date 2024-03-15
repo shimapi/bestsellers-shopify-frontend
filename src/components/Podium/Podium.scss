@@ -1,0 +1,35 @@
+@import "../../utils/css-variables.scss";
+
+.base {
+	transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+	.base {
+		display: none;
+	}
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	.base {
+		width: 700px;
+	}
+}
+@media (min-width: 1024px) and (max-width: 1440px) {
+	.base {
+		width: 900px;
+	}
+}
+@media (min-width: 1440px) {
+	.base {
+		width: 940px;
+	}
+}
+@media (min-width: 768px) {
+	.base {
+		background-color: #b4b4b4;
+		height: 20px;
+		position: absolute;
+		border: 10px rgb(91 85 85 / 24%) inset;
+		border-radius: 12px 12px 0 0;
+	}
+}

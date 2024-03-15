@@ -1,0 +1,50 @@
+
+@import '../../utils/css-variables.scss';
+
+.footer{
+  text-align: center;
+  display: flex;
+  padding: 30px 0;
+  justify-content: space-around;
+  background-color: $color-darker;
+  
+  &__container{
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+  }
+  &__text{
+    font-family: $font-text;
+    font-weight: $font-text-weight;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+  }
+  &__social{
+    filter: invert(70%);
+    padding: 0 20px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  &__social-icon{
+    width: 24px;
+    height: 24px;
+  }
+  &__social-icon:hover{
+    transform: scale(1.2);
+    filter:contrast(1.5);
+  }
+  a{
+    text-decoration: none;
+    color: $color-accent1;
+  }
+  a:hover{
+    color: $color-accent2;
+  }
+
+}

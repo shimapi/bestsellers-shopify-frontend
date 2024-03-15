@@ -1,8 +1,11 @@
 {
   "name": "bestsellers-shopify-frontend",
+  "description": "Frontend for Bestsellers Shopify",
+  "author": "Shirley Mallea - @shirleymallea",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "https://bestsellers-backend-git-mike-review-fi-f1d1b7-shimapis-projects.vercel.app/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,6 +17,8 @@
     "nodemon": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-loading-skeleton": "^3.4.0",
+    "react-router-dom": "^6.22.2",
     "sass": "^1.71.1"
   },
   "devDependencies": {

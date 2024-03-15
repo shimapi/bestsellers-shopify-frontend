@@ -1,27 +1,135 @@
+@import "../../utils/css-variables.scss";
+
 .nav {
 	width: 100%;
-	background-color: pink;
+	height: $nav-mobile-height;
+	background-color: $color-darker;
+	color: $color-text;
+	display: flex;
+	align-items: center;
+	font-family: $font-subtitle;
+	font-weight: $font-subtitle-weight;
+	position: sticky;
+	top: 0;
+	z-index: 100;
 
 	&__menu {
-		background-color: aquamarine;
+		display: flex;
+		width: 400px;
+		justify-content: space-around;
 	}
-	&__menu-item {
-		background-color: brown;
+	&__mobile {
+		display: flex;
+	}
+	&__desktop {
+		justify-content: center;
+	}
+	&__menu-switch {
+		display: none;
+	}
+	&__name {
+		padding: 0;
+		margin: 0;
+	}
+	&__name a {
+		color: $color-text;
+		text-decoration: none;
+		cursor: pointer;
+		padding: 0 12px;
+		font-family: $font-title;
+		font-weight: $font-title-weight;
+	}
+	&__container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: auto 0;
+		align-items: center;
+		align-content: center;
+	}
+	a {
+		text-decoration: none;
+		color: $color-text;
+	}
+	a:hover {
+		color: $color-accent1;
+		text-decoration: none;
+	}
+	&__menu-link,
+	a {
+		height: 52px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transform: scale(1);
+		transition: all 0.3s ease;
+		box-sizing: border-box;
+		padding: 0 10px;
+	}
+	&__menu-link:hover,
+	a.active {
+		border-bottom: 5px solid $color-accent1;
+		color: $color-accent1;
+		text-decoration: none;
+		transform: scale(1.05);
 	}
 }
-// media queries for mobile: 320px, tablet: 768, desktop reduced: 1024px, desktop: 1440px
-@media (430px <= width <= 768px) { //430 iphone pro max
+
+@media (max-width: 768px) {
 	.nav {
-		background-color: red;
+		background-color: $color-darker;
+		transition: all 0.5s ease-in-out;
+		position: fixed;
+
+		&__open {
+			position: absolute;
+			top: 48px;
+			text-align: right;
+			display: block;
+			width: 100%;
+		}
+		&__menu-link {
+			padding: 12px 24px;
+			background-color: $color-black;
+			color: $color-text;
+			opacity: 95%;
+		}
+		&__menu-switch {
+			position: absolute;
+			right: 0;
+			top: 4px;
+			margin: 8px;
+			padding: 4px;
+			z-index: 5;
+			display: block;
+			filter: invert(100%);
+			cursor: pointer;
+			scale: 200%;
+		}
+		&__desktop {
+			display: none;
+		}
+		&__closed {
+			display: none;
+		}
 	}
 }
-@media (768px <= width <= 1024px) {
-	.nav {
-		background-color: blue;
+@media (min-width: 768px) and (max-width: 1024px) {
+	.nav__container {
+		max-width: 768px;
+		width: 768px;
 	}
 }
-@media (1024px <= width <= 1440px) {
-	.nav {
-		background-color: green;
+@media (min-width: 1024px) and (max-width: 1440px) {
+	.nav__container {
+		max-width: 1024px;
+		width: 1024px;
+	}
+}
+@media (min-width: 1440px) {
+	.nav__container {
+		max-width: 1440px;
+		width: 1440px;
 	}
 }

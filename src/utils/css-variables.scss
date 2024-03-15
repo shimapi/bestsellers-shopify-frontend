@@ -1,0 +1,40 @@
+@import "https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap";
+
+/* COLORS */
+$color-darker: #071220;
+$color-accent1: #b32570;
+$color-accent2: #fecd1a;
+$color-background: #12253d;
+$color-text: #fff8df;
+$color-black: #000;
+$color-light-accent: #ebbfec;
+
+/* FONTS */
+$font-title: "Amaranth", "Arial", sans-serif;
+$font-title-weight: 700;
+$font-title-size: 2.5rem;
+
+$font-subtitle: "Quicksand", "Arial", sans-serif;
+$font-subtitle-weight: 700;
+$font-subtitle-size: 1.5rem;
+
+$font-text: "Montserrat", "Arial", sans-serif;
+$font-text-weight: 400;
+$font-text-size: 1rem;
+
+$font-product-title: "Amaranth", "Arial", sans-serif;
+$font-product-title-weight: 700;
+$font-product-title-size: 2rem;
+
+/* CARDS */
+$height-firstPlace: 150px;
+$height-secondPlace: $height-firstPlace * 0.6;
+$height-thirdPlace: $height-firstPlace * 0.3;
+$height-card: 100%;
+$width-card: 100%;
+$height-container: 250px;
+
+/* NAV */
+$nav-mobile-height: 56px;
