@@ -2,7 +2,7 @@
 
 .card {
 	width: $width-card;
-	height: $height-card;
+	height: auto;
 
 	&__image {
 		border-radius: 12px;
@@ -41,7 +41,7 @@
 		position: absolute;
 		backface-visibility: hidden;
 		width: $width-card;
-		height: $height-card;
+		height: auto;
 	}
 	&__flip-back {
 		position: absolute;
@@ -52,7 +52,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: flex-start;
+		justify-content: center;
 	}
 	&__back-image {
 		border-radius: 12px;
@@ -69,7 +69,7 @@
 	}
 	&__back-product-info {
 		position: absolute;
-		width: $width-card - 0.8%;
+		width: 72%;
 		/* height: $height-card - 0.8%; */
 		display: flex;
 		flex-direction: column;
@@ -86,10 +86,8 @@
 		justify-content: center;
 		flex-direction: column;
 		position: relative;
-		margin: 16px;
-		min-height: 300px;
-		background-color: aqua;
-		border: 5px solid $color-accent2;
+		margin: 16px 0;
+		aspect-ratio: 1 / 1;
 
 		&__place {
 			width: 40px;
@@ -176,5 +174,5 @@
 .card__place-first,
 .card__place-second,
 .card__place-third {
-	animation: fade 2s ease-in;
+	animation: fade 1s ease-in;
 }
