@@ -3,6 +3,10 @@
 .card {
 	width: $width-card;
 	height: auto;
+	aspect-ratio: 1 / 1;
+	bottom: 40px;
+	perspective: 700px;
+	transition: all 0.3s ease;
 
 	&__image {
 		border-radius: 12px;
@@ -48,7 +52,7 @@
 		transform: rotateY(180deg);
 		backface-visibility: hidden;
 		width: $width-card;
-		height: $height-card;
+		height: auto;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -70,7 +74,7 @@
 	&__back-product-info {
 		position: absolute;
 		width: 72%;
-		/* height: $height-card - 0.8%; */
+		height: auto;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -78,6 +82,50 @@
 		text-shadow: 0px 0px 4px $color-background;
 	}
 }
+
+@media (min-width: 768px) {
+	.card {
+		display: flex;
+		position: relative;
+		width: 32%;
+		align-items: center;
+		align-content: center;
+		flex-direction: column;
+
+		&__place {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			border-radius: 12px 12px 0 0;
+		}
+
+		&__place-first {
+			height: $height-firstPlace;
+			opacity: 100%;
+		}
+		&__place-second {
+			height: $height-secondPlace;
+			opacity: 90%;
+		}
+		&__place-third {
+			height: $height-thirdPlace;
+			opacity: 80%;
+		}
+		&-first {
+			order: 2;
+			height: $height-firstPlace + $height-container768; // 100%;
+		}
+		&-second {
+			order: 1;
+			height: $height-secondPlace + $height-container768; // 90%;
+		}
+		&-third {
+			order: 3;
+			height: $height-thirdPlace + $height-container768; // 80%;
+		}
+	}
+}
+
 @media (max-width: 768px) {
 	.card {
 		text-align: center;
@@ -87,7 +135,6 @@
 		flex-direction: column;
 		position: relative;
 		margin: 16px 0;
-		aspect-ratio: 1 / 1;
 
 		&__place {
 			width: 40px;
@@ -102,62 +149,52 @@
 	}
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
 	.card {
 		&__image {
 			transform: scale(0.95);
-		}
-	}
-}
-@media (min-width: 1024px) and (max-width: 1440px) {
-}
-@media (min-width: 1440px) {
-}
 
-@media (min-width: 768px) {
-	.card {
-		display: flex;
-		flex-direction: column;
-		padding: 4px;
-		bottom: 36px;
-		position: relative;
-		width: 32%;
+			&:hover {
+				transform: scale(1);
+			}
+		}
 
-		&__place-first {
-			height: $height-firstPlace;
-			opacity: 100%;
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-		}
-		&__place-second {
-			height: $height-secondPlace;
-			opacity: 90%;
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-		}
-		&__place-third {
-			height: $height-thirdPlace;
-			opacity: 80%;
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-		}
 		&-first {
 			order: 2;
-			height: $height-firstPlace + $height-container; // 100%;
+			height: $height-firstPlace + $height-container1024;
 		}
 		&-second {
 			order: 1;
-			height: $height-secondPlace + $height-container; // 90%;
+			height: $height-secondPlace + $height-container1024;
 		}
 		&-third {
 			order: 3;
-			height: $height-thirdPlace + $height-container; // 80%;
+			height: $height-thirdPlace + $height-container1024;
 		}
-		&__place {
-			border-radius: 12px 12px 0 0;
+	}
+}
+
+@media (min-width: 1440px) {
+	.card {
+		&__image {
+			transform: scale(0.95);
+
+			&:hover {
+				transform: scale(1);
+			}
+		}
+
+		&-first {
+			order: 2;
+			height: $height-firstPlace + $height-container1440;
+		}
+		&-second {
+			order: 1;
+			height: $height-secondPlace + $height-container1440;
+		}
+		&-third {
+			order: 3;
+			height: $height-thirdPlace + $height-container1440;
 		}
 	}
 }
