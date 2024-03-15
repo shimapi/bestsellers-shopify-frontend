@@ -64,6 +64,7 @@
 
 		&:hover {
 			transform: rotate(12deg);
+			cursor: pointer;
 		}
 	}
 	&__main-image-photo {
@@ -72,6 +73,10 @@
 		object-fit: cover;
 		position: absolute;
 		border: none;
+		&:hover {
+			transform: scale(1);
+			cursor: pointer;
+		}
 	}
 
 	&__all-images {
@@ -93,6 +98,14 @@
 
 		&:hover {
 			transform: scale(1.05);
+		}
+	}
+
+	&__main-image-photo &__image {
+		transition: all 0.6s ease;
+
+		&:hover {
+			transform: scale(1);
 		}
 	}
 

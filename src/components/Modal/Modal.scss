@@ -22,4 +22,18 @@
 		border-radius: 12px;
 		box-shadow: 0 0 8px 0 $color-background;
 	}
+	&__close {
+		position: absolute;
+		top: 12px;
+		right: 12px;
+		font-size: 24px;
+		color: $color-accent1;
+		cursor: pointer;
+	}
+	&__image {
+		width: 100%;
+		max-width: 300px;
+		height: auto;
+		border-radius: 12px;
+	}
 }

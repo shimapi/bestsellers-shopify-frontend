@@ -46,4 +46,4 @@ The application is designed to be responsive with specific styles for mobile, ta
 
 ## Known Issues
 
-- Card in Mobile: Investigating issue with `.card` height on mobile devices.
+- Card in Mobile: Investigating issue with `.card` flip on mobile devices.
