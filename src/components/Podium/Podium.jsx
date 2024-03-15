@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const Podium = () => {
 	const [product, setProduct] = useState([]);
-	const api = useApi({ url: PathConstants.AMOUR, method: "GET" });
+	const api = useApi({ url: PathConstants.BEST, method: "GET" });
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -14,7 +14,7 @@ const Podium = () => {
 			setProduct(products);
 		};
 		fetchProducts();
-	});
+	}, []);
 
 	const sortingProducts = product.sort((a, b) => b.sales - a.sales);
 	return (

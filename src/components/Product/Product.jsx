@@ -5,6 +5,7 @@ import PathConstants from "../../routes/pathConstants";
 import useApi from "../../custom-hooks/useApi";
 import "react-loading-skeleton/dist/skeleton.css";
 import ProductSkeleton from "./ProductSkeleton";
+import Modal from "../Modal/Modal";
 //import Skeleton from "react-loading-skeleton";
 
 const Product = () => {
@@ -47,6 +48,17 @@ const Product = () => {
 		}
 	}, [product]);
 
+	const handleModal2 = (e) => {
+		console.log("modal foto", e.target.src);
+		<Modal image={e.target.src} />;
+		console.log("modal2", e.target.dataset.src);
+		return;
+	};
+
+	function handleModal() {
+		console.log("modal");
+	}
+
 	console.log("product {}", product);
 
 	return (
@@ -63,10 +75,14 @@ const Product = () => {
 									className="product__image"
 									alt={product.data.title}
 									loading="lazy"
-									/* 	onClick={handleModalOpen} */
+									onClick={handleModal2}
 								/>
 							</div>
-							<div className="product__main-image-border2"></div>
+							<div
+								className="product__main-image-border2"
+								onClick={handleModal2}
+								data-src={product.data.image.src}
+							></div>
 						</div>
 						<div className="product__all-images">
 							{product.data.images.length > 0 &&
@@ -76,6 +92,7 @@ const Product = () => {
 											src={image.src}
 											className="product__image"
 											loading="lazy"
+											onClick={handleModal}
 										/>
 									</div>
 								))}
