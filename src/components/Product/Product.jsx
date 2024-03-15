@@ -6,6 +6,7 @@ import useApi from "../../custom-hooks/useApi";
 import "react-loading-skeleton/dist/skeleton.css";
 import ProductSkeleton from "./ProductSkeleton";
 import Modal from "../Modal/Modal";
+import useCloseModal from "@/custom-hooks/useCloseModal";
 
 const Product = () => {
 	const params = useParams();
@@ -49,7 +50,7 @@ const Product = () => {
 		}
 	}, [product]);
 
-	const handleModal = (e) => {
+	const handleOpenModal = (e) => {
 		if (e.target.dataset.src) {
 			setModalImage(e.target.dataset.src);
 		} else if (e.target.src) {
@@ -58,9 +59,11 @@ const Product = () => {
 		setIsModalOpen(true);
 	};
 
-	const closeModal = () => {
+	const handleCloseModal = () => {
 		setIsModalOpen(false);
 	};
+
+	useCloseModal(handleCloseModal);
 
 	return (
 		<main className="product">
@@ -76,12 +79,12 @@ const Product = () => {
 									className="product__image"
 									alt={product.data.title}
 									loading="lazy"
-									onClick={handleModal}
+									onClick={handleOpenModal}
 								/>
 							</div>
 							<div
 								className="product__main-image-border2"
-								onClick={handleModal}
+								onClick={handleOpenModal}
 								data-src={product.data.image.src}
 							></div>
 						</div>
@@ -93,7 +96,7 @@ const Product = () => {
 											src={image.src}
 											className="product__image"
 											loading="lazy"
-											onClick={handleModal}
+											onClick={handleOpenModal}
 										/>
 									</div>
 								))}
@@ -123,7 +126,9 @@ const Product = () => {
 					</section>
 				</div>
 			)}
-			{isModalOpen && <Modal image={modalImage} closeModal={closeModal} />}
+			{isModalOpen && (
+				<Modal image={modalImage} handleCloseModal={handleCloseModal} />
+			)}
 		</main>
 	);
 };
