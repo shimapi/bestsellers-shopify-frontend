@@ -75,7 +75,7 @@ const Footer = () => {
 						>
 							@shirleymallea
 						</Link>
-						para
+						&nbsp;para&nbsp;
 						<Link
 							to={PathConstants.SHOPIFY}
 							target="_blank"
