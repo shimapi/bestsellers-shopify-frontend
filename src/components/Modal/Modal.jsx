@@ -16,15 +16,10 @@ const Modal = ({ image, handleCloseModal }) => {
 	return (
 		<div className={`modal ${isModalOpen}`}>
 			<span className="modal__close" onClick={handleCloseModal}>
-				{" "}
-				x{" "}
+				&#x2715;
 			</span>
 			<div className="modal__container">
 				<img src={image} alt="modal" className="modal__image" />
-			</div>
-			<div className="modal__navigation">
-				<span className="modal__navigation-left">{"<"}</span>
-				<span className="modal__navigation-right">{">"}</span>
 			</div>
 		</div>
 	);
