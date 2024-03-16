@@ -9,17 +9,40 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.8);
 	z-index: 100;
+	flex-direction: column;
 
 	&__container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding: 24px;
-		background-color: $color-background;
 		border-radius: 12px;
-		box-shadow: 0 0 8px 0 $color-background;
+		box-shadow: 0 0 16px 0 $color-background;
+	}
+
+	&__navigation {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		padding: 0 20px;
+		position: absolute;
+	}
+
+	&__close,
+	&__navigation-left,
+	&__navigation-right {
+		font-size: 40px;
+		font-weight: 400;
+		color: $color-text;
+		cursor: pointer;
+	}
+
+	&__image {
+		width: 100%;
+		max-width: 500px;
+		height: auto;
+		border-radius: 12px;
 	}
 }

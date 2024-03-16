@@ -1,10 +1,23 @@
 //import PathConstants from "@/routes/pathConstants";
+import { useEffect, useState } from "react";
 import "./Modal.scss";
 
-const Modal = ({ image }) => {
+const Modal = ({ image, handleCloseModal }) => {
+	console.log("image", image);
+	const [isModalOpen, setIsModalOpen] = useState("modal-closed");
+
+	useEffect(() => {
+		if (image) {
+			setIsModalOpen("modal-active");
+		}
+	}, [image]);
+
 	console.log("modal image", image);
 	return (
-		<div className="modal">
+		<div className={`modal ${isModalOpen}`}>
+			<span className="modal__close" onClick={handleCloseModal}>
+				&#x2715;
+			</span>
 			<div className="modal__container">
 				<img src={image} alt="modal" className="modal__image" />
 			</div>
