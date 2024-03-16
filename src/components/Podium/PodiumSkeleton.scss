@@ -19,17 +19,6 @@
 	}
 }
 
-@media (min-width: 768px) {
-	.card-skeleton {
-		/* 		display: flex;
-		position: relative;
-		width: 32%;
-		align-items: center;
-		align-content: center;
-		flex-direction: column; */
-	}
-}
-
 @media (max-width: 768px) {
 	.card-skeleton {
 		&__container {

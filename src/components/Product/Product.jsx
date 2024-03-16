@@ -67,7 +67,6 @@ const Product = () => {
 
 	return (
 		<main className="product">
-			<ProductSkeleton />
 			{isLoading && <ProductSkeleton />}
 			{product.data && (
 				<div className="product__container">
