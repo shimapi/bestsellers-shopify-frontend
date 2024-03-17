@@ -49,7 +49,9 @@
 // Swiper
 .swiper {
 	width: 300px;
-	height: auto;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 12px;
 }
 .swiper-slide {
 	display: flex;

@@ -52,9 +52,13 @@ const Product = () => {
 	}, [product]);
 
 	const handleOpenModal = (e) => {
-		setModalImage(e.target.src);
-		setHandleImgID(e.target.id);
-
+		if (e.target.dataset.src) {
+			setModalImage(e.target.dataset.src);
+			setHandleImgID(e.target.id);
+		} else if (e.target.src) {
+			setModalImage(e.target.src);
+			setHandleImgID(e.target.id);
+		}
 		setIsModalOpen(true);
 	};
 
@@ -63,44 +67,41 @@ const Product = () => {
 	};
 
 	useCloseModal(handleCloseModal);
-
-	console.log(product);
-
 	return (
 		<main className="product">
 			{isLoading && <ProductSkeleton />}
-			<div className="product__container">
-				<section className="product__images">
-					{product.data &&
-						product.data.images &&
-						product.data.images.length > 0 &&
-						product.data.images.map((image, index) => {
-							return (
-								<>
-									{product.data.images[index].position - 1 === 0 && (
-										<div className="product__main-image" key={index}>
-											<div className="product__main-image-container">
-												<div className="product__main-image-border1"></div>
-												<div className="product__main-image-photo">
-													<img
-														src={image.src}
-														className="product__image"
-														loading="lazy"
-														onClick={handleOpenModal}
-														id={image.position - 1}
-														alt={product.data.title}
-													/>
-												</div>
-												<div
-													className="product__main-image-border2"
-													onClick={handleOpenModal}
-													id={image.position - 1}
-												></div>
-											</div>
-										</div>
-									)}
+			{product.data && (
+				<div className="product__container">
+					<section className="product__images">
+						{/** si hay imágenes, que me muestre SOLO la primera con toda
+						 * esta estructura
+						 * muestra la posición 0
+						 */}
+						<div className="product__main-image">
+							<div className="product__main-image-border1"></div>
+							<div className="product__main-image-photo">
+								<img
+									src={product.data.images[0].src}
+									className="product__image"
+									alt={product.data.title}
+									loading="lazy"
+									id={product.data.images[0].position - 1}
+									onClick={handleOpenModal}
+								/>
+							</div>
+							<div
+								className="product__main-image-border2"
+								onClick={handleOpenModal}
+								data-src={product.data.image.src}
+							></div>
+						</div>
 
-									{product.data.images[index].position - 1 > 0 && (
+						{/* si hay mas imagenes, que muestre esto
+						desde la posición 1 */}
+						<div className="product__all-images">
+							{product.data.images.length > 0 &&
+								product.data.images.map((image, index) => {
+									return (
 										<div key={index} className="product__image-container">
 											<img
 												src={image.src}
@@ -111,12 +112,10 @@ const Product = () => {
 												alt={product.data.title}
 											/>
 										</div>
-									)}
-								</>
-							);
-						})}
-				</section>
-				{product.data && (
+									);
+								})}
+						</div>
+					</section>
 					<section className="product__info">
 						<span className="product__sku">
 							SKU: {product.data.id} · {product.data.product_type}
@@ -139,11 +138,8 @@ const Product = () => {
 							/>
 						</section>
 					</section>
-				)}
-			</div>
-
-			{/** no tocar */}
-
+				</div>
+			)}
 			{isModalOpen && (
 				<Modal
 					image={modalImage}
