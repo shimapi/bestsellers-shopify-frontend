@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 // Swiper
 import { register } from "swiper/element/bundle";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,15 +11,29 @@ register();
 import "./Modal.scss";
 
 const Modal = ({ image, handleCloseModal, product, handleImgID }) => {
-	console.log("image", image);
-	console.log("handleImgID", handleImgID);
 	const [isModalOpen, setIsModalOpen] = useState("modal-closed");
+
+	const swiperRef = useRef(null);
 
 	useEffect(() => {
 		if (image) {
 			setIsModalOpen("modal-active");
 		}
 	}, [image]);
+
+	const handleNextSlide = () => {
+		if (swiperRef.current && swiperRef.current.swiper) {
+			const swiper = swiperRef.current.swiper;
+			swiper.slideNext();
+		}
+	};
+
+	const handlePrevSlide = () => {
+		if (swiperRef.current && swiperRef.current.swiper) {
+			const swiper = swiperRef.current.swiper;
+			swiper.slidePrev();
+		}
+	};
 
 	return (
 		<div className={`modal ${isModalOpen}`}>
@@ -28,15 +42,17 @@ const Modal = ({ image, handleCloseModal, product, handleImgID }) => {
 			</span>
 			<div className="modal__container">
 				<Swiper
-					slidesPerView={"auto"}
+					ref={swiperRef}
+					slidesPerView={1}
+					slidesPerGroup={1}
 					spaceBetween={30}
 					pagination={{
 						clickable: true,
 					}}
+					loop={false}
 					a11y={false}
 					simulateTouch={false}
-					navigation={true}
-					key={handleImgID}
+					navigation={false}
 					effect={"fade"}
 					keyboard={{
 						enabled: true,
@@ -59,6 +75,8 @@ const Modal = ({ image, handleCloseModal, product, handleImgID }) => {
 								</SwiperSlide>
 							);
 						})}
+					<div className="swiper-button-next" onClick={handleNextSlide}></div>
+					<div className="swiper-button-prev" onClick={handlePrevSlide}></div>
 				</Swiper>
 			</div>
 		</div>
