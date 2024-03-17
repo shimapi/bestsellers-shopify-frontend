@@ -64,8 +64,8 @@
 	height: 100%;
 	object-fit: cover;
 }
-.swiper-button-prev,
-.swiper-button-next {
+.swiper-button-prev::after,
+.swiper-button-next::after {
 	color: $color-text;
 }
 .swiper-pagination-bullet {
