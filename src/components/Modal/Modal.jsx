@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./Modal.scss";
 // Swiper
 import { register } from "swiper/element/bundle";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,6 +8,7 @@ import "swiper/css/navigation";
 import { Keyboard, Pagination, Navigation } from "swiper/modules";
 register();
 // end of Swiper
+import "./Modal.scss";
 
 const Modal = ({ image, handleCloseModal, product, handleImgID }) => {
 	console.log("image", image);
@@ -28,16 +28,20 @@ const Modal = ({ image, handleCloseModal, product, handleImgID }) => {
 			</span>
 			<div className="modal__container">
 				<Swiper
+					slidesPerView={"auto"}
+					spaceBetween={30}
+					pagination={{
+						clickable: true,
+					}}
+					a11y={false}
+					simulateTouch={false}
+					navigation={true}
 					key={handleImgID}
-					slidesPerView={1}
 					effect={"fade"}
 					keyboard={{
 						enabled: true,
 					}}
-					pagination={{
-						clickable: true,
-					}}
-					navigation={true}
+					shortSwipes={false}
 					initialSlide={handleImgID}
 					modules={[Keyboard, Pagination, Navigation]}
 					className="mySwiper"
