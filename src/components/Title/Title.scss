@@ -14,19 +14,4 @@
 		margin: 0;
 		padding: 0;
 	}
-
-	&__sparkles {
-		width: 24px;
-		height: 24px;
-		margin: 0 8px;
-		transform: scale(1);
-		transition: all 0.8s ease;
-
-		&:hover {
-			transform: scale(1.5) rotate(12deg);
-		}
-	}
-	&__sparkles-last {
-		transform: rotate(180deg);
-	}
 }
