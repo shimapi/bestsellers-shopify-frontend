@@ -52,10 +52,14 @@ const Product = () => {
 	}, [product]);
 
 	const handleOpenModal = (e) => {
-		setModalImage(e.target.src);
 		setHandleImgID(e.target.id);
-
 		setIsModalOpen(true);
+
+		if (e.target.dataset.src) {
+			setModalImage(e.target.dataset.src);
+		} else if (e.target.src) {
+			setModalImage(e.target.src);
+		}
 	};
 
 	const handleCloseModal = () => {
@@ -95,6 +99,8 @@ const Product = () => {
 													className="product__main-image-border2"
 													onClick={handleOpenModal}
 													id={image.position - 1}
+													data-src={image.src}
+													alt={product.data.title}
 												></div>
 											</div>
 										</div>
