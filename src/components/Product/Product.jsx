@@ -15,6 +15,7 @@ const Product = () => {
 	const [error, setError] = useState(null);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [modalImage, setModalImage] = useState(null);
+	const [handleImgID, setHandleImgID] = useState(null);
 
 	const api = useApi({
 		url: PathConstants.PRODUCTS + params.productID,
@@ -53,8 +54,10 @@ const Product = () => {
 	const handleOpenModal = (e) => {
 		if (e.target.dataset.src) {
 			setModalImage(e.target.dataset.src);
+			setHandleImgID(e.target.id);
 		} else if (e.target.src) {
 			setModalImage(e.target.src);
+			setHandleImgID(e.target.id);
 		}
 		setIsModalOpen(true);
 	};
@@ -64,21 +67,25 @@ const Product = () => {
 	};
 
 	useCloseModal(handleCloseModal);
-
 	return (
 		<main className="product">
 			{isLoading && <ProductSkeleton />}
 			{product.data && (
 				<div className="product__container">
 					<section className="product__images">
+						{/** si hay imágenes, que me muestre SOLO la primera con toda
+						 * esta estructura
+						 * muestra la posición 0
+						 */}
 						<div className="product__main-image">
 							<div className="product__main-image-border1"></div>
 							<div className="product__main-image-photo">
 								<img
-									src={product.data.image.src}
+									src={product.data.images[0].src}
 									className="product__image"
 									alt={product.data.title}
 									loading="lazy"
+									id={product.data.images[0].position - 1}
 									onClick={handleOpenModal}
 								/>
 							</div>
@@ -88,18 +95,25 @@ const Product = () => {
 								data-src={product.data.image.src}
 							></div>
 						</div>
+
+						{/* si hay mas imagenes, que muestre esto
+						desde la posición 1 */}
 						<div className="product__all-images">
 							{product.data.images.length > 0 &&
-								product.data.images.map((image, index) => (
-									<div key={index} className="product__image-container">
-										<img
-											src={image.src}
-											className="product__image"
-											loading="lazy"
-											onClick={handleOpenModal}
-										/>
-									</div>
-								))}
+								product.data.images.map((image, index) => {
+									return (
+										<div key={index} className="product__image-container">
+											<img
+												src={image.src}
+												className="product__image"
+												loading="lazy"
+												onClick={handleOpenModal}
+												id={image.position - 1}
+												alt={product.data.title}
+											/>
+										</div>
+									);
+								})}
 						</div>
 					</section>
 					<section className="product__info">
@@ -127,7 +141,12 @@ const Product = () => {
 				</div>
 			)}
 			{isModalOpen && (
-				<Modal image={modalImage} handleCloseModal={handleCloseModal} />
+				<Modal
+					image={modalImage}
+					handleCloseModal={handleCloseModal}
+					product={product}
+					handleImgID={handleImgID}
+				/>
 			)}
 		</main>
 	);
