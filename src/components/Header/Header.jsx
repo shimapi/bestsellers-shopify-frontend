@@ -1,4 +1,4 @@
-import sparklesImg from "../../images/sparkles.svg";
+import Sparkles from "../Sparkles/Sparkles";
 import "./Header.scss";
 
 const Header = () => {
@@ -6,14 +6,9 @@ const Header = () => {
 		<header className="header">
 			<h1 className="header__title">Los más vendidos</h1>
 			<div className="header__subtitle-container">
-				<img src={sparklesImg} alt="sparkles" className="header__sparkles" />
+				<Sparkles direction="left" size="m" />
 				<h2 className="header__subtitle">en tu Shopify</h2>
-				<img
-					src={sparklesImg}
-					alt="sparkles"
-					className="header__sparkles header__sparkles-last"
-					loading="lazy"
-				/>
+				<Sparkles direction="right" size="m" />
 			</div>
 		</header>
 	);

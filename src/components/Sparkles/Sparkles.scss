@@ -1,0 +1,37 @@
+.sparkles {
+	width: 24px;
+	height: 24px;
+	margin: 0 8px;
+	transform: scale(1);
+	transition: all 0.8s ease;
+
+	&-left,
+	&-right {
+		transform: scale(1);
+	}
+
+	&-left:hover {
+		transform: scale(1.5) rotate(-12deg);
+	}
+
+	&-right:hover {
+		transform: scale(1.5) rotate(12deg);
+	}
+
+	&__size-s {
+		width: 16px;
+		height: 16px;
+	}
+	&__size-m {
+		width: 24px;
+		height: 24px;
+	}
+	&__size-l {
+		width: 32px;
+		height: 32px;
+	}
+	&__size-xl {
+		width: 48px;
+		height: 48px;
+	}
+}

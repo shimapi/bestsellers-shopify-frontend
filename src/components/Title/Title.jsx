@@ -1,16 +1,12 @@
-import sparklesImg from "../../images/sparkles.svg";
+import Sparkles from "../Sparkles/Sparkles";
 import "./Title.scss";
 
-const Title = ({ sentence }) => {
+const Title = ({ sentence, size }) => {
 	return (
 		<section className="title">
-			<img src={sparklesImg} alt="sparkles" className="title__sparkles" />
+			<Sparkles direction="left" size={size} />
 			<h2 className="title__words">{sentence}</h2>
-			<img
-				src={sparklesImg}
-				alt="sparkles"
-				className="title__sparkles title__sparkles-last"
-			/>
+			<Sparkles direction="right" size={size} />
 		</section>
 	);
 };
