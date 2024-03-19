@@ -37,7 +37,7 @@ const TopProducts = () => {
 	return (
 		<>
 			<section className="top-products">
-				{<Title sentence="Los más amados" size="l" /> || <Skeleton />}
+				{<Title sentence="Los más amados" size="m" /> || <Skeleton />}
 				<div className="top-products__container">
 					{isLoading && <TopProductsSkeleton cards={10} />}
 					{sortingProducts.slice(0, 10).map((product, index) => {

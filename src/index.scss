@@ -38,8 +38,6 @@ body {
 	a:hover {
 		color: $color-light-accent;
 		text-decoration: $color-accent2 wavy underline;
-		text-decoration-line: underline;
-		text-underline-offset: 2px;
 	}
 }
 
@@ -58,7 +56,6 @@ body {
 		color: $color-accent1;
 		text-decoration: $color-light-accent wavy underline;
 		text-decoration-line: underline;
-		text-underline-offset: 2px;
 	}
 }
 
