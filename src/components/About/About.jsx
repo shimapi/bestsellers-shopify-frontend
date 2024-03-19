@@ -5,7 +5,7 @@ const About = () => {
 	return (
 		<section className="about">
 			<div className="about__container">
-				<Title sentence="Sobre nosotros" size="l" />
+				<Title sentence="Sobre nosotros" size="m" />
 
 				<p className="about__text">
 					Altorrelieve es una empresa familiar, con tienda online y despacho a

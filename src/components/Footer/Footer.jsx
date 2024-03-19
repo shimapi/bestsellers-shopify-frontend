@@ -15,7 +15,7 @@ const Footer = () => {
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<Title sentence="Quiero visitar la tienda completa" size="xl" />
+				<Title sentence="Quiero visitar la tienda completa" size="l" />
 			</Link>
 
 			<footer className="footer">

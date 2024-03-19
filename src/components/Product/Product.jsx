@@ -68,8 +68,6 @@ const Product = () => {
 
 	useCloseModal(handleCloseModal);
 
-	console.log(product);
-
 	return (
 		<main className="product">
 			{isLoading && <ProductSkeleton />}
@@ -82,10 +80,10 @@ const Product = () => {
 							return (
 								<>
 									{product.data.images[index].position - 1 === 0 && (
-										<div className="product__main-image" key={index}>
+										<div className="product__main-image">
 											<div className="product__main-image-container">
 												<div className="product__main-image-border1"></div>
-												<div className="product__main-image-photo">
+												<div className="product__main-image-photo" key={index}>
 													<img
 														src={image.src}
 														className="product__image"

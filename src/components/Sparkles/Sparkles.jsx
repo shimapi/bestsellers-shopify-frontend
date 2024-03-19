@@ -5,8 +5,6 @@ import sparklesImgRight from "@/images/sparkles-right.svg";
 
 const Sparkles = ({ direction, size }) => {
 	const [sizeSparkle, setSizeSparkle] = useState("s");
-	console.log("direction", direction);
-	console.log("size", size);
 
 	useEffect(() => {
 		switch (size) {

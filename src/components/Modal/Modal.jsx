@@ -64,7 +64,6 @@ const Modal = ({ image, handleCloseModal, product, handleImgID }) => {
 				>
 					{product.data.images.length > 0 &&
 						product.data.images.map((image, index) => {
-							console.log("handleImgID desde map en modal", handleImgID);
 							return (
 								<SwiperSlide className="product__image-container" key={index}>
 									<img

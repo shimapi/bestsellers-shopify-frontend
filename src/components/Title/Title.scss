@@ -13,5 +13,24 @@
 		font-size: $font-title-size;
 		margin: 0;
 		padding: 0;
+		transition: all 0.3s ease;
+	}
+
+	&__size-s {
+		font-size: 2rem;
+	}
+	&__size-m {
+		font-size: 2.5rem;
+	}
+	&__size-l {
+		font-size: 2.8rem;
+
+		&:hover {
+			text-underline-offset: 17px;
+			text-decoration: $color-accent2 wavy underline;
+		}
+	}
+	&__size-xl {
+		font-size: 3rem;
 	}
 }
