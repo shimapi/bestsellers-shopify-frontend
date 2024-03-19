@@ -28,11 +28,11 @@
 	}
 	&__main-image {
 		height: auto;
-    width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+		width: 100%;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	&__main-image-container {
 		min-width: 300px;
@@ -179,7 +179,7 @@
 		width: 700px;
 	}
 }
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) {
 	.product__container {
 		max-width: 900px;
 		width: 900px;
