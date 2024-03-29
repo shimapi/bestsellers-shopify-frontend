@@ -3,7 +3,7 @@ import "./Card.scss";
 import { Link } from "react-router-dom";
 
 const Card = ({ winnerProduct, product }) => {
-	const [winnerProductPlace, setWinnerProductPlace] = useState(0);
+	const [winnerProductPlace, setWinnerProductPlace] = useState("");
 	const [flip, setFlip] = useState(false);
 
 	useEffect(() => {
